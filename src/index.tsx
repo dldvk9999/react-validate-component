@@ -6,15 +6,16 @@ export const VText = ({
   maxLength,
   value,
   className,
-  props,
-}: VINPUT_PARAMS) => {
+}: // props,
+VINPUT_PARAMS) => {
   return (
     <input
       type="text"
-      {...props}
+      // {...props}
       className={className}
       maxLength={maxLength}
       value={value}
+      placeholder="this is react-validate-component test."
     />
   );
 };
