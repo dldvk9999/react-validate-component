@@ -1,14 +1,28 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
+import styles from './index.module.css';
 import { VText } from '../.';
 
 const App = () => {
   return (
-    <div>
-      <VText maxLength={0} value={''} className={''} props={{}} />
-    </div>
+    <section className={styles.layout}>
+      <h1>React-Validate-Component</h1>
+      <div>
+        <h2>VText</h2>
+        <VText
+          value={''}
+          className={styles.input_text}
+          placeholder="this is react-validate-component test."
+          state
+          onChange={() => {}}
+          props={{}}
+        />
+      </div>
+    </section>
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const container = document.getElementById('root');
+const root = createRoot(container!);
+root.render(<App />);

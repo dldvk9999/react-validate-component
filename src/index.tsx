@@ -1,21 +1,22 @@
-import * as React from 'react';
-import { VINPUT_PARAMS } from './types/vinput';
+import React from 'react';
+import styles from './index.module.css';
+// import { VTEXT_PARAMS } from './types/vinput';
 
 // Text
 export const VText = ({
-  maxLength,
-  value,
   className,
-}: // props,
-VINPUT_PARAMS) => {
+  value,
+  placeholder,
+  onChange,
+  state,
+}: any) => {
   return (
     <input
       type="text"
-      // {...props}
-      className={className}
-      maxLength={maxLength}
-      value={value}
-      placeholder="this is react-validate-component test."
+      className={`${className} ${state ? styles.invalid : ''}`}
+      value={value ?? ''}
+      placeholder={placeholder}
+      onChange={onChange}
     />
   );
 };
