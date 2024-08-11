@@ -59,6 +59,10 @@
     "typescript": "^3.9.10"
   },
   "dependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/plugin-transform-runtime": "^7.24.7",
+    "@babel/preset-env": "^7.25.3",
+    "babel-jest": "^29.7.0",
     "rollup-plugin-postcss": "^4.0.2"
   }
 }

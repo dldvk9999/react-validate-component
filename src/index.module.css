@@ -1,3 +1,103 @@
 .invalid {
   border: 2px solid red;
 }
+
+/* 유효성 메시지 locate */
+.vinput {
+  display: flex;
+}
+.vinput-top-left {
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  justify-content: center;
+}
+.vinput-top {
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+}
+.vinput-top-right {
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  justify-content: center;
+}
+.vinput-center-left {
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+}
+.vinput-center-right {
+  align-items: center;
+  justify-content: center;
+}
+.vinput-bottom-left {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.vinput-bottom {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.vinput-bottom-right {
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+.innerMessage {
+  position: absolute;
+  font-size: 12px;
+  margin: 0;
+  padding: 2px 5px;
+  display: flex;
+}
+.innerMessage-top-left {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.innerMessage-top {
+  align-items: flex-start;
+  justify-content: center;
+}
+.innerMessage-top-right {
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.innerMessage-center-left {
+  align-items: center;
+  justify-content: flex-start;
+}
+.innerMessage-center {
+  align-items: center;
+  justify-content: center;
+}
+.innerMessage-center-right {
+  align-items: center;
+  justify-content: flex-end;
+}
+.innerMessage-bottom-left {
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.innerMessage-bottom {
+  align-items: flex-end;
+  justify-content: center;
+}
+.innerMessage-bottom-right {
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.animateMessage {
+  animation: fade-in 1s ease-in-out;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
