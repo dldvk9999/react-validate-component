@@ -1,160 +1,110 @@
-# TSDX React User Guide
+# react-validate-component
 
-Congrats! You just saved yourself hours of work by bootstrapping this project with TSDX. Let’s get you oriented with what’s here and how to use it.
+`react-validate-component`는 리액트 애플리케이션에서 입력 유효성 검사를 간편하게 처리할 수 있도록 도와주는 라이브러리입니다. 현재 `VText` 컴포넌트가 구현되어 있으며, 이 컴포넌트를 사용하여 간단하게 텍스트 입력의 유효성을 검사할 수 있습니다.
 
-> This TSDX setup is meant for developing React component libraries (not apps!) that can be published to NPM. If you’re looking to build a React-based app, you should use `create-react-app`, `razzle`, `nextjs`, `gatsby`, or `react-static`.
+## 설치
 
-> If you’re new to TypeScript and React, checkout [this handy cheatsheet](https://github.com/sw-yx/react-typescript-cheatsheet/)
+`react-validate-component` 라이브러리는 npm 또는 yarn을 통해 설치할 수 있습니다.
 
-## Commands
-
-TSDX scaffolds your new library inside `/src`, and also sets up a [Parcel-based](https://parceljs.org) playground for it inside `/example`.
-
-The recommended workflow is to run TSDX in one terminal:
+### npm
 
 ```bash
-npm start # or yarn start
+npm install react-validate-component
 ```
 
-This builds to `/dist` and runs the project in watch mode so any edits you save inside `src` causes a rebuild to `/dist`.
-
-Then run the example inside another:
+### yarn
 
 ```bash
-cd example
-npm i # or yarn to install dependencies
-npm start # or yarn start
+yarn add react-validate-component
 ```
 
-The default example imports and live reloads whatever is in `/dist`, so if you are seeing an out of date component, make sure TSDX is running in watch mode like we recommend above. **No symlinking required**, we use [Parcel's aliasing](https://parceljs.org/module_resolution.html#aliases).
+## 사용법
 
-To do a one-off build, use `npm run build` or `yarn build`.
+현재 라이브러리에는 `VText` 컴포넌트가 포함되어 있습니다. 이 컴포넌트를 사용하여 텍스트 입력 필드의 유효성 검사를 쉽게 구현할 수 있습니다.
 
-To run tests, use `npm test` or `yarn test`.
+### VText 컴포넌트
 
-## Configuration
+`VText` 컴포넌트는 기본적인 텍스트 입력 필드와 유효성 검사 기능을 제공합니다.
 
-Code quality is set up for you with `prettier`, `husky`, and `lint-staged`. Adjust the respective fields in `package.json` accordingly.
+#### 기본 사용 예제
 
-### Jest
+```jsx
+import React from 'react';
+import { VText } from 'react-validate-component';
 
-Jest tests are set up to run with `npm test` or `yarn test`.
+const App = () => {
+  const [message, setMessage] = React.useState('');
+  const [vState, setVState] = React.useState(false);
+  const [vMessage, setVMessage] = React.useState('');
 
-### Bundle analysis
+  React.useEffect(() => {
+    if (/[\d]/gim.exec(message)) {
+      setVState(true);
+      setVMessage('숫자는 입력이 안됩니다.');
+    } else {
+      setVState(false);
+      setVMessage('');
+    }
+  }, [message]);
 
-Calculates the real cost of your library using [size-limit](https://github.com/ai/size-limit) with `npm run size` and visulize it with `npm run analyze`.
+  return (
+    <section className={styles.layout}>
+      <h1>React-Validate-Component</h1>
+      <div>
+        <h2>VText</h2>
+        <VText
+          vState={vState}
+          vClassName={''}
+          vShowMessage={true}
+          vMessage={vMessage}
+          vIsInnerMessage={true}
+          vLocateMessage={'top-left'}
+          vMessageClass={styles.validation_message}
+          vIsAnimate={false}
+          props={{
+            onChange: (e: { target: { value: string } }) => {
+              setMessage(e.target.value);
+            },
+            placeholder: 'this is react-validate-component test.',
+            className: styles.input_text,
+            defaultValue: 'test',
+          }}
+        />
+      </div>
+    </section>
+  );
+};
 
-#### Setup Files
-
-This is the folder structure we set up for you:
-
-```txt
-/example
-  index.html
-  index.tsx       # test your component here in a demo app
-  package.json
-  tsconfig.json
-/src
-  index.tsx       # EDIT THIS
-/test
-  blah.test.tsx   # EDIT THIS
-.gitignore
-package.json
-README.md         # EDIT THIS
-tsconfig.json
+export default App;
 ```
 
-#### React Testing Library
+#### Props
 
-We do not set up `react-testing-library` for you yet, we welcome contributions and documentation on this.
+- `vState` (boolean): 유효성 상태 값입니다.
+- `vClassName` (string): 유효성 입힐 class 명입니다.
+- `vShowMessage` (boolean): 유효성 메시지 출력 여부값입니다.
+- `vMessage` (string): 유효성 검사 실패 시 표시할 에러 메시지입니다.
+- `vIsInnerMessage` (boolean): 유효성 메시지를 element 안에 넣을지 (absolute 형태) 여부입니다.
+- `vLocateMessage` (`top-left`, `top`, `top-right`, `center-left`, `center`, `center-right`, `bottom-left`, `bottom`, `bottom-right`): 유효성 메시지를 element 어디에 붙일지 위치값입니다.
+- `vMessageClass` (string): 유효성 메시지에 입힐 class 명입니다.
+- `vIsAnimate` (boolean): 유효성 메시지 출력 시 애니메이션 적용할지 여부입니다. (개발중, 삭제될 수 있음)
+- `props` (object): 기타 옵션입니다. 기본 input 태그에 attribute로 넣을 값들을 입력하시면 됩니다.
 
-### Rollup
+### 유효성 검사 규칙
 
-TSDX uses [Rollup](https://rollupjs.org) as a bundler and generates multiple rollup configs for various module formats and build settings. See [Optimizations](#optimizations) for details.
+- 지금은 사용자가 정규식 혹은 함수를 이용해 작성한 유효성검사 로직을 토대로 element에 출력하고 있습니다.
+- 상단에 예시를 확인하여 주시기 바랍니다.
 
-### TypeScript
+## 개발 중인 기능
 
-`tsconfig.json` is set up to interpret `dom` and `esnext` types, as well as `react` for `jsx`. Adjust according to your needs.
+- 현재 `VText` 컴포넌트만 구현되어 있으며, 다른 입력 유형에 대한 컴포넌트도 개발할 예정입니다.
+- 추가적인 유효성 검사 규칙 및 에러 메시지 처리 기능이 계획되어 있습니다.
+- 현재 문서에 이미지를 추가한 문서 업데이트 예정되어있습니다.
 
-## Continuous Integration
+## 기여
 
-### GitHub Actions
+기여를 원하시는 분은 언제든지 pull request를 제출하거나 이슈를 제기해 주세요. 코드 기여 및 피드백을 환영합니다!
 
-Two actions are added by default:
+## 라이센스
 
-- `main` which installs deps w/ cache, lints, tests, and builds on all pushes against a Node and OS matrix
-- `size` which comments cost comparison of your library on every pull request using [`size-limit`](https://github.com/ai/size-limit)
-
-## Optimizations
-
-Please see the main `tsdx` [optimizations docs](https://github.com/palmerhq/tsdx#optimizations). In particular, know that you can take advantage of development-only optimizations:
-
-```js
-// ./types/index.d.ts
-declare var __DEV__: boolean;
-
-// inside your code...
-if (__DEV__) {
-  console.log('foo');
-}
-```
-
-You can also choose to install and use [invariant](https://github.com/palmerhq/tsdx#invariant) and [warning](https://github.com/palmerhq/tsdx#warning) functions.
-
-## Module Formats
-
-CJS, ESModules, and UMD module formats are supported.
-
-The appropriate paths are configured in `package.json` and `dist/index.js` accordingly. Please report if any issues are found.
-
-## Deploying the Example Playground
-
-The Playground is just a simple [Parcel](https://parceljs.org) app, you can deploy it anywhere you would normally deploy that. Here are some guidelines for **manually** deploying with the Netlify CLI (`npm i -g netlify-cli`):
-
-```bash
-cd example # if not already in the example folder
-npm run build # builds to dist
-netlify deploy # deploy the dist folder
-```
-
-Alternatively, if you already have a git repo connected, you can set up continuous deployment with Netlify:
-
-```bash
-netlify init
-# build command: yarn build && cd example && yarn && yarn build
-# directory to deploy: example/dist
-# pick yes for netlify.toml
-```
-
-## Named Exports
-
-Per Palmer Group guidelines, [always use named exports.](https://github.com/palmerhq/typescript#exports) Code split inside your React app instead of your React library.
-
-## Including Styles
-
-There are many ways to ship styles, including with CSS-in-JS. TSDX has no opinion on this, configure how you like.
-
-For vanilla CSS, you can include it at the root directory and add it to the `files` section in your `package.json`, so that it can be imported separately by your users and run through their bundler's loader.
-
-## Publishing to NPM
-
-We recommend using [np](https://github.com/sindresorhus/np).
-
-## Usage with Lerna
-
-When creating a new package with TSDX within a project set up with Lerna, you might encounter a `Cannot resolve dependency` error when trying to run the `example` project. To fix that you will need to make changes to the `package.json` file _inside the `example` directory_.
-
-The problem is that due to the nature of how dependencies are installed in Lerna projects, the aliases in the example project's `package.json` might not point to the right place, as those dependencies might have been installed in the root of your Lerna project.
-
-Change the `alias` to point to where those packages are actually installed. This depends on the directory structure of your Lerna project, so the actual path might be different from the diff below.
-
-```diff
-   "alias": {
--    "react": "../node_modules/react",
--    "react-dom": "../node_modules/react-dom"
-+    "react": "../../../node_modules/react",
-+    "react-dom": "../../../node_modules/react-dom"
-   },
-```
-
-An alternative to fixing this problem would be to remove aliases altogether and define the dependencies referenced as aliases as dev dependencies instead. [However, that might cause other problems.](https://github.com/palmerhq/tsdx/issues/64)
+이 라이브러리는 [MIT 라이센스](LICENSE) 하에 배포됩니다.
