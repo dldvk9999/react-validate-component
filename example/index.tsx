@@ -24,13 +24,14 @@ const App = () => {
       <h1>React-Validate-Component</h1>
       <div>
         <h2>VText</h2>
+        <h3>DO NOT INPUT NUMBER.</h3>
         <VText
           vState={vState}
+          vType={'tooltip'}
           // vClassName={''}
           vShowMessage={true}
           vMessage={vMessage}
-          // vIsInnerMessage={true}
-          // vLocateMessage={'top-left'}
+          vLocateMessage={'bottom-right'}
           vMessageClass={styles.validation_message}
           // vIsAnimate={false}
           props={{
