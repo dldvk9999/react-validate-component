@@ -27,13 +27,13 @@ const App = () => {
         <h3>DO NOT INPUT NUMBER.</h3>
         <VText
           vState={vState}
-          vType={'tooltip'}
-          // vClassName={''}
+          vType={'outer'}
+          // vClassName={'test'}
           vShowMessage={true}
           vMessage={vMessage}
-          vLocateMessage={'bottom-right'}
+          vLocateMessage={'bottom-left'}
           vMessageClass={styles.validation_message}
-          // vIsAnimate={false}
+          vIsAnimate={true}
           props={{
             onChange: (e: { target: { value: string } }) => {
               setMessage(e.target.value);
