@@ -1,4 +1,4 @@
-import propsType from './vprops';
+import propsType from '../types/vprops';
 
 // VText 파라미터
 export interface VTEXT_PARAMS {

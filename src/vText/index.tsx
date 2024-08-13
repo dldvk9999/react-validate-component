@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './index.module.css';
-import { VTEXT_PARAMS } from './types/vinput';
+import { VTEXT_PARAMS } from './vText';
 
 // Text
-export const VText = ({
+export function VText({
   vState = false,
   vType = 'outer',
   vClassName = '',
@@ -13,7 +13,7 @@ export const VText = ({
   vMessageClass = '',
   vIsAnimate = false,
   props = {},
-}: VTEXT_PARAMS) => {
+}: VTEXT_PARAMS) {
   switch (vType) {
     case 'outer':
       return (
@@ -88,41 +88,6 @@ export const VText = ({
         </div>
       );
     default:
-      return null;
+      return <div></div>;
   }
-};
-
-// Checkbox
-export const VCheckbox = () => {
-  return <input type="checkbox" />;
-};
-
-// Radio
-export const VRadio = () => {
-  return <input type="radio" />;
-};
-
-// Date
-export const VDate = () => {
-  return <input type="date" />;
-};
-
-// Color
-export const VColor = () => {
-  return <input type="color" />;
-};
-
-// Email
-export const VEmail = () => {
-  return <input type="email" />;
-};
-
-// Range
-export const VRange = () => {
-  return <input type="range" />;
-};
-
-// Url
-export const VUrl = () => {
-  return <input type="url" />;
-};
+}
