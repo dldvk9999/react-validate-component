@@ -38,6 +38,26 @@
   },
   "name": "react-validate-component",
   "author": "JongGeun",
+  "description": "A component library that checks the validity of data entered into 'input' tags and displays validation messages.",
+  "keywords": [
+    "Validation",
+    "ErrorMessages",
+    "FormValidation",
+    "InputFields",
+    "ComponentLibrary",
+    "UserInput",
+    "DataValidation",
+    "React",
+    "Frontend",
+    "FormComponents",
+    "CustomValidators",
+    "DynamicValidation",
+    "FieldErrors"
+  ],
+  "bugs": {
+    "url": "https://github.com/dldvk9999/react-validate-component/issues"
+  },
+  "homepage": "https://github.com/dldvk9999/react-validate-component/issues",
   "module": "dist/react-validate-component.esm.js",
   "size-limit": [
     {
