@@ -29,3 +29,17 @@ body {
 .validation_message {
   color: red;
 }
+
+.label_class {
+  border-radius: 15px;
+  border: 2px solid #6bc94d;
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 20px;
+}
+.label_check_class {
+  background-color: #6bc94d;
+}
