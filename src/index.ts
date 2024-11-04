@@ -1,10 +1,10 @@
 import { VText } from './vText';
 import { VCheckbox } from './vCheckbox';
-import { vColor } from './vColor';
-import { vDate } from './vDate';
-import { vEmail } from './vEmail';
-import { vRadio } from './vRadio';
-import { vRange } from './vRange';
-import { vURL } from './vURL';
+import { VURL } from './vURL';
+import { VColor } from './vColor';
+import { VDate } from './vDate';
+import { VEmail } from './vEmail';
+import { VRadio } from './vRadio';
+import { VRange } from './vRange';
 
-export { VText, VCheckbox, vColor, vDate, vEmail, vRadio, vRange, vURL };
+export { VText, VCheckbox, VURL, VColor, VDate, VEmail, VRadio, VRange };

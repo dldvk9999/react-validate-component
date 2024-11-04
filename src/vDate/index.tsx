@@ -1,5 +1,5 @@
 import React from 'react';
 
-export function vDate() {
+export function VDate() {
   return <input type="date" />;
 }

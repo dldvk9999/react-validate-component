@@ -23,7 +23,7 @@ export const VCheckboxComponent = () => {
   return (
     <div>
       <h2>VCheckbox</h2>
-      <h3>CHECK UP TO 3.</h3>
+      <h3>CHECK UP TO 123123123123.</h3>
       <VCheckbox
         vState={vState}
         vType={'bottom'}

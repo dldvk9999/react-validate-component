@@ -1,5 +1,5 @@
 import React from 'react';
 
-export function vEmail() {
+export function VEmail() {
   return <input type="email" />;
 }

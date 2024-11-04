@@ -1,5 +1,5 @@
 import React from 'react';
 
-export function vRange() {
+export function VRange() {
   return <input type="range" />;
 }

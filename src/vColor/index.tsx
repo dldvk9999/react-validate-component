@@ -1,5 +1,5 @@
 import React from 'react';
 
-export function vColor() {
+export function VColor() {
   return <input type="color" />;
 }
