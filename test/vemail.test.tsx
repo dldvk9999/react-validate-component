@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
-import { VURL } from '../.';
+import { VEmail } from '../.';
 
-describe('VURL', () => {
+describe('VEmail', () => {
   it('renders without crashing', () => {
     const input = document.createElement('input');
     const root = createRoot(input);
     root.render(
-      <VURL
+      <VEmail
         vState={true}
         vType={'outer'}
         vClassName={'test'}
@@ -20,7 +20,7 @@ describe('VURL', () => {
           onChange: () => {},
           placeholder: 'this is react-validate-component test.',
           className: 'test',
-          defaultValue: 'https://www.test.com',
+          defaultValue: 'test@test.com',
         }}
       />
     );
