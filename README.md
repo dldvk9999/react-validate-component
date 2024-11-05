@@ -24,9 +24,9 @@ yarn add react-validate-component
 
 ## 사용법, How to use
 
-현재 라이브러리에는 `VText`, `VCheckbox`, `VURL` 컴포넌트가 구현되어 있습니다. 이 컴포넌트를 사용하여 텍스트 입력 필드의 유효성 검사를 쉽게 구현할 수 있습니다.
+현재 라이브러리에는 `VText`, `VCheckbox`, `VURL`, `VEmail` 컴포넌트가 구현되어 있습니다. 이 컴포넌트를 사용하여 텍스트 입력 필드의 유효성 검사를 쉽게 구현할 수 있습니다.
 
-The library currently includes the `VText`, `VCheckbox`, `VURL` component. You can use this component to easily implement validation for text input fields.
+The library currently includes the `VText`, `VCheckbox`, `VURL`, `VEmail` component. You can use this component to easily implement validation for text input fields.
 
 ### VText Component
 
@@ -119,21 +119,21 @@ The `VCheckbox` component provides functionality to display validation messages 
 
 ```jsx
 import React from 'react';
-import { VText } from 'react-validate-component';
+import { VCheckbox } from 'react-validate-component';
 
 const App = () => {
   const list = ['Tiger', 'Rabbit', 'Elephant', 'Dog', 'Pig', 'Cat', 'Duck'];
   const [checked, setChecked] = React.useState<boolean[]>(
     Array.from(list, () => false)
   );
-  const [vState2, setVState2] = React.useState<boolean>(false);
+  const [vState, setvState] = React.useState<boolean>(false);
   const [vMessage2, setVMessage2] = React.useState<string>('');
   React.useEffect(() => {
     if (checked.filter(v => v).length > 3) {
-      setVState2(true);
+      setvState(true);
       setVMessage2('You can check up to 3 items.');
     } else {
-      setVState2(false);
+      setvState(false);
       setVMessage2('');
     }
   }, [checked]);
@@ -145,7 +145,7 @@ const App = () => {
         <h2>VCheckbox</h2>
         <h3>CHECK UP TO 3.</h3>
         <VCheckbox
-          vState={vState2}
+          vState={vState}
           vType={'bottom'}
           // vClassName={'test'}
           vLabelClassName={styles.label_class}
@@ -211,7 +211,7 @@ The `VURL` component provides functionality to display validation messages for b
 
 ```jsx
 import React from 'react';
-import { VText } from 'react-validate-component';
+import { VURL } from 'react-validate-component';
 
 const App = () => {
   const [vState, setvState] = React.useState < boolean > false;
@@ -280,6 +280,85 @@ export default App;
 - `vIsAnimate` (boolean): Whether to apply animation when displaying the validation message (currently, only opacity animation is supported).
 - `props` (object): Other options. Enter values for attributes that can be added to the basic input tag.
 
+### VEmail Component
+
+`VEmail` 컴포넌트는 기본적인 Email 필드에 유효성 검사 문구를 출력해주는 기능을 제공합니다.
+
+The `VEmail` component provides functionality to display validation messages for basic Email fields.
+
+#### 사용 예제, Example
+
+```jsx
+import React from 'react';
+import { VEmail } from 'react-validate-component';
+
+const App = () => {
+  const [vState, setvState] = React.useState < boolean > false;
+  const [vMessage, setvMessage] = React.useState < string > '';
+  const [message, setmessage] =
+    React.useState < string > 'https://www.naver.com';
+
+  React.useEffect(() => {
+    if (/^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i.test(message)) {
+      setvState(false);
+      setvMessage('');
+    } else {
+      setvState(true);
+      setvMessage('IT MUST BE EMAIL.');
+    }
+  }, [message]);
+
+  return (
+    <div>
+      <h2>VEmail</h2>
+      <h3>INPUT EMail.</h3>
+      <VEmail
+        vState={vState}
+        vType={'outer'}
+        // vClassName={'test'}
+        vShowMessage={true}
+        vMessage={vMessage}
+        vLocateMessage={'bottom-left'}
+        vMessageClass={styles.validation_message}
+        vIsAnimate={true}
+        props={{
+          onChange: (e: { target: { value: string } }) => {
+            setmessage(e.target.value);
+          },
+          placeholder: 'this is react-validate-component test.',
+          className: styles.input_text,
+          defaultValue: 'test@test.com',
+        }}
+      />
+    </div>
+  );
+};
+
+export default App;
+```
+
+#### Props
+
+- `vState` (boolean): 유효성 상태 값입니다.
+- `vType` (`inner`, `outer`, `tooltip`): 유효성 메시지를 띄우는 타입입니다.
+- `vClassName` (string): 유효성 입힐 class 명입니다.
+- `vShowMessage` (boolean): 유효성 메시지 출력 여부값입니다.
+- `vMessage` (string): 유효성 검사 실패 시 표시할 에러 메시지입니다.
+- `vLocateMessage` (`top-left`, `top`, `top-right`, `center-left`, `center`, `center-right`, `bottom-left`, `bottom`, `bottom-right`): 유효성 메시지를 element 어디에 붙일지 위치값입니다.
+- `vMessageClass` (string): 유효성 메시지에 입힐 class 명입니다.
+- `vIsAnimate` (boolean): 유효성 메시지 출력 시 애니메이션 적용할지 여부입니다. (현재는 opacity만 적용되어있습니다.)
+- `props` (object): 기타 옵션입니다. 기본 input 태그에 attribute로 넣을 값들을 입력하시면 됩니다.
+
+- `vState` (boolean): The validity status value.
+- `vType` (`inner`, `outer`, `tooltip`): The type of validation message display.
+- `vClassName` (string): The class name to apply for validation styling.
+- `vShowMessage` (boolean): Whether to display the validation message.
+- `vMessage` (string): The error message to display when validation fails.
+- `vLocateMessage` (`top-left`, `top`, `top-right`, `center-left`, `center`, `center-right`, `bottom-left`, `bottom`, `bottom-right`): The position where the validation message should be displayed relative to the element.
+- `vMessageClass` (string): The class name to apply to the validation message.
+- `vIsAnimate` (boolean): Whether to apply animation when displaying the validation message (currently, only opacity animation is supported).
+- `props` (object): Other options. Enter values for attributes that can be added to the basic input tag.
+
 ### 유효성 검사 규칙, Validation Rules
 
 - 지금은 사용자가 정규식 혹은 함수를 이용해 작성한 유효성검사 로직을 토대로 element에 출력하고 있습니다.
@@ -290,11 +369,11 @@ export default App;
 
 ## 개발중인 기능, Features in Development
 
-- 현재 `VText`, `VCheckbox` 컴포넌트만 구현되어 있으며, 다른 입력 유형에 대한 컴포넌트도 개발할 예정입니다.
+- 현재 `VText`, `VCheckbox`, `VURL`, `VEmail` 컴포넌트만 구현되어 있으며, 다른 입력 유형에 대한 컴포넌트도 개발할 예정입니다.
 - 추가적인 유효성 검사 규칙 및 에러 메시지 처리 기능이 계획되어 있습니다.
 - 현재 문서에 이미지를 추가한 문서 업데이트도 예정되어있습니다.
 
-- Currently, only the `VText`, `VCheckbox` component is implemented, but components for other input types are planned for development.
+- Currently, only the `VText`, `VCheckbox`, `VURL`, `VEmail` component is implemented, but components for other input types are planned for development.
 - Additional validation rules and error message handling features are also in the pipeline.
 - Updates to the documentation, including the addition of images, are also planned.
 
