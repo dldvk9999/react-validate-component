@@ -1,7 +1,7 @@
 import propsType from '../types/vprops';
 
 // VText 파라미터
-export interface VTEXT_PARAMS {
+export interface VURL_PARAMS {
   readonly vState: boolean; // 유효성 상태 값
   readonly vType: // 유효성 메시지를 출력할 타입
   'inner' | 'outer' | 'tooltip';

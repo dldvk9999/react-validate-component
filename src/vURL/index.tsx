@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './index.module.css';
-import { VTEXT_PARAMS } from './vURL';
+import { VURL_PARAMS } from './vURL';
 
 export function VURL({
   vState = false,
@@ -12,7 +12,7 @@ export function VURL({
   vMessageClass = '',
   vIsAnimate = false,
   props = {},
-}: VTEXT_PARAMS) {
+}: VURL_PARAMS) {
   switch (vType) {
     case 'outer':
       return (

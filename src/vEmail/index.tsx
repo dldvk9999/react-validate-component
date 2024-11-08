@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './index.module.css';
-import { VTEXT_PARAMS } from './vEmail';
+import { VEMAIL_PARAMS } from './vEmail';
 
 export function VEmail({
   vState = false,
@@ -12,7 +12,7 @@ export function VEmail({
   vMessageClass = '',
   vIsAnimate = false,
   props = {},
-}: VTEXT_PARAMS) {
+}: VEMAIL_PARAMS) {
   switch (vType) {
     case 'outer':
       return (
