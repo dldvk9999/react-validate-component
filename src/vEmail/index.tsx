@@ -23,8 +23,8 @@ export function VEmail({
             type="email"
             {...props}
             defaultValue={props?.defaultValue ?? ''}
-            className={`${props?.className} ${
-              vState ? vClassName || styles.invalid : ''
+            className={`${props?.className ?? ''} ${vClassName} ${
+              vState ? styles.invalid : ''
             }`}
           ></input>
           {vState && vShowMessage ? (
@@ -45,8 +45,8 @@ export function VEmail({
             type="email"
             {...props}
             defaultValue={props?.defaultValue ?? ''}
-            className={`${props?.className} ${
-              vState ? vClassName || styles.invalid : ''
+            className={`${props?.className ?? ''} ${vClassName} ${
+              vState ? styles.invalid : ''
             }`}
           ></input>
           {vState && vShowMessage ? (
@@ -71,8 +71,8 @@ export function VEmail({
             type="email"
             {...props}
             defaultValue={props?.defaultValue ?? ''}
-            className={`${props?.className} ${
-              vState ? vClassName || styles.invalid : ''
+            className={`${props?.className ?? ''} ${vClassName} ${
+              vState ? styles.invalid : ''
             }`}
           ></input>
           {vState && vShowMessage ? (

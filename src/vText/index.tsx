@@ -24,8 +24,8 @@ export function VText({
             type="text"
             {...props}
             defaultValue={props?.defaultValue ?? ''}
-            className={`${props?.className} ${
-              vState ? vClassName || styles.invalid : ''
+            className={`${props?.className ?? ''} ${vClassName} ${
+              vState ? styles.invalid : ''
             }`}
           ></input>
           {vState && vShowMessage ? (
@@ -46,8 +46,8 @@ export function VText({
             type="text"
             {...props}
             defaultValue={props?.defaultValue ?? ''}
-            className={`${props?.className} ${
-              vState ? vClassName || styles.invalid : ''
+            className={`${props?.className ?? ''} ${vClassName} ${
+              vState ? styles.invalid : ''
             }`}
           ></input>
           {vState && vShowMessage ? (
@@ -72,8 +72,8 @@ export function VText({
             type="text"
             {...props}
             defaultValue={props?.defaultValue ?? ''}
-            className={`${props?.className} ${
-              vState ? vClassName || styles.invalid : ''
+            className={`${props?.className ?? ''} ${vClassName} ${
+              vState ? styles.invalid : ''
             }`}
           ></input>
           {vState && vShowMessage ? (
