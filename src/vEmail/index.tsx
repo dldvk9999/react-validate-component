@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './index.module.css';
+import styles from '../index.module.css';
 import { VEMAIL_PARAMS } from './vEmail';
 
 export function VEmail({
