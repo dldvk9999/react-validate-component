@@ -12,6 +12,7 @@ const App = () => {
       <VComponent.VCheckboxComponent />
       <VComponent.VURLComponent />
       <VComponent.VEmailComponent />
+      <VComponent.VRadioComponent />
     </section>
   );
 };

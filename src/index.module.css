@@ -1,0 +1,210 @@
+.invalid {
+  border: 2px solid red;
+  outline: none;
+}
+.invalid:focus,
+.invalid:focus-visible,
+.invalid:focus-within {
+  border: 2px solid red;
+}
+
+/* vType === 'outer' */
+.vinput {
+  display: flex;
+}
+.vinput-top-left {
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  justify-content: center;
+}
+.vinput-top {
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+}
+.vinput-top-right {
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  justify-content: center;
+}
+.vinput-center-left {
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+}
+.vinput-center-right {
+  align-items: center;
+  justify-content: center;
+}
+.vinput-bottom-left {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.vinput-bottom {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.vinput-bottom-right {
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* vType === 'inner' */
+.innerMessage {
+  position: absolute;
+  font-size: 12px;
+  margin: 0;
+  padding: 2px 5px;
+  display: flex;
+}
+.innerMessage-top-left {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.innerMessage-top {
+  align-items: flex-start;
+  justify-content: center;
+}
+.innerMessage-top-right {
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.innerMessage-center-left {
+  align-items: center;
+  justify-content: flex-start;
+}
+.innerMessage-center {
+  align-items: center;
+  justify-content: center;
+}
+.innerMessage-center-right {
+  align-items: center;
+  justify-content: flex-end;
+}
+.innerMessage-bottom-left {
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.innerMessage-bottom {
+  align-items: flex-end;
+  justify-content: center;
+}
+.innerMessage-bottom-right {
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+/* vType === 'tooltip' */
+.tooltipMessage {
+  position: absolute;
+  margin: 0;
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-color: black;
+}
+p[class*='tooltipMessage-top'] {
+  transform: translateY(calc(-100% - 10px));
+}
+p[class*='tooltipMessage-top']::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  border: 10px solid transparent;
+  border-top-color: black;
+  border-bottom: 0;
+  margin-bottom: -11px;
+}
+.vinput.tooltipMessage-top-left {
+  justify-content: flex-start;
+}
+p.tooltipMessage-top-left::after {
+  left: 3%;
+}
+.vinput.tooltipMessage-top {
+  justify-content: center;
+}
+p.tooltipMessage-top::after {
+  left: 44%;
+}
+.tooltipMessage-top-right {
+  justify-content: flex-end;
+}
+p.tooltipMessage-top-right::after {
+  left: 87%;
+}
+p[class*='tooltipMessage-center'] {
+  /* transform: translateY(calc(-100% - 10px)); */
+}
+p[class*='tooltipMessage-center']::after {
+  content: '';
+  position: absolute;
+  border: 10px solid transparent;
+}
+.vinput.tooltipMessage-center-right {
+  justify-content: flex-end;
+}
+p.tooltipMessage-center-right {
+  transform: translateX(calc(100% + 10px));
+}
+p.tooltipMessage-center-right::after {
+  border-right-color: black;
+  left: -10%;
+}
+.vinput.tooltipMessage-center-left {
+  justify-content: flex-start;
+}
+p.tooltipMessage-center-left {
+  transform: translateX(calc(-100% - 10px));
+}
+p.tooltipMessage-center-left::after {
+  border-left-color: black;
+  left: 100%;
+}
+
+p[class*='tooltipMessage-bottom'] {
+  transform: translateY(calc(120% + 10px));
+}
+p[class*='tooltipMessage-bottom']::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  border: 10px solid transparent;
+  border-bottom-color: black;
+  border-top: 0;
+  margin-top: -11px;
+}
+.vinput.tooltipMessage-bottom-left {
+  justify-content: flex-start;
+}
+p.tooltipMessage-bottom-left::after {
+  left: 3%;
+}
+.vinput.tooltipMessage-bottom {
+  justify-content: center;
+}
+p.tooltipMessage-bottom::after {
+  left: 44%;
+}
+.tooltipMessage-bottom-right {
+  justify-content: flex-end;
+}
+p.tooltipMessage-bottom-right::after {
+  left: 87%;
+}
+
+.animateMessage {
+  animation: fade-in 1s ease-in-out;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
