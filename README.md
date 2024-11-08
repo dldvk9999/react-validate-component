@@ -24,9 +24,9 @@ yarn add react-validate-component
 
 ## 사용법, How to use
 
-현재 라이브러리에는 `VText`, `VCheckbox`, `VURL`, `VEmail` 컴포넌트가 구현되어 있습니다. 이 컴포넌트를 사용하여 텍스트 입력 필드의 유효성 검사를 쉽게 구현할 수 있습니다.
+현재 라이브러리에는 `VText`, `VCheckbox`, `VURL`, `VEmail`, `VRadio` 컴포넌트가 구현되어 있습니다. 이 컴포넌트를 사용하여 텍스트 입력 필드의 유효성 검사를 쉽게 구현할 수 있습니다.
 
-The library currently includes the `VText`, `VCheckbox`, `VURL`, `VEmail` component. You can use this component to easily implement validation for text input fields.
+The library currently includes the `VText`, `VCheckbox`, `VURL`, `VEmail`, `VRadio` component. You can use this component to easily implement validation for text input fields.
 
 ## 컴포넌트, Components
 
@@ -34,6 +34,7 @@ The library currently includes the `VText`, `VCheckbox`, `VURL`, `VEmail` compon
 [vCheckbox](./doc/vcheckbox.md)
 [vURL](./doc/vurl.md)
 [vEmail](./doc/vemail.md)
+[vRadio](./doc/vradio.md)
 
 ### 유효성 검사 규칙, Validation Rules
 
@@ -45,11 +46,11 @@ The library currently includes the `VText`, `VCheckbox`, `VURL`, `VEmail` compon
 
 ## 개발중인 기능, Features in Development
 
-- 현재 `VText`, `VCheckbox`, `VURL`, `VEmail` 컴포넌트만 구현되어 있으며, 다른 입력 유형에 대한 컴포넌트도 개발할 예정입니다.
+- 현재 `VText`, `VCheckbox`, `VURL`, `VEmail`, `VRadio` 컴포넌트만 구현되어 있으며, 다른 입력 유형에 대한 컴포넌트도 개발할 예정입니다.
 - 추가적인 유효성 검사 규칙 및 에러 메시지 처리 기능이 계획되어 있습니다.
 - 현재 문서에 이미지를 추가한 문서 업데이트도 예정되어있습니다.
 
-- Currently, only the `VText`, `VCheckbox`, `VURL`, `VEmail` component is implemented, but components for other input types are planned for development.
+- Currently, only the `VText`, `VCheckbox`, `VURL`, `VEmail`, `VRadio` component is implemented, but components for other input types are planned for development.
 - Additional validation rules and error message handling features are also in the pipeline.
 - Updates to the documentation, including the addition of images, are also planned.
 
