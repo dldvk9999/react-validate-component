@@ -2,7 +2,6 @@ import propsType from '../types/vprops';
 
 // VCheclbox 파라미터
 export interface VCOLOR_PARAMS {
-  defaultValue: string;
   readonly vState: boolean; // 유효성 상태 값
   readonly vType: // 유효성 메시지를 출력할 타입
   'top' | 'bottom';

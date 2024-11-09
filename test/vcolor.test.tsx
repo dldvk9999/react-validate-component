@@ -8,7 +8,6 @@ describe('VURL', () => {
     const root = createRoot(input);
     root.render(
       <VColor
-        defaultValue={'#aa1177'}
         vState={true}
         vType={'bottom'}
         vClassName={'test'}

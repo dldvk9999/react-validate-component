@@ -3,7 +3,6 @@ import styles from '../index.module.css';
 import { VCOLOR_PARAMS } from './vColor';
 
 export function VColor({
-  // defaultValue = '',
   vState = false,
   vType = 'bottom',
   vClassName = '',

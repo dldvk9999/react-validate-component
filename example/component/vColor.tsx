@@ -22,7 +22,6 @@ export const VColorComponent = () => {
       <h2>VColor</h2>
       <h3>Choose Color.</h3>
       <VColor
-        defaultValue={message}
         vState={vState}
         vType={'bottom'}
         vClassName={'test'}
