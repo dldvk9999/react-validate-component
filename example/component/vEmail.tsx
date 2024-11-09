@@ -5,7 +5,7 @@ import { VEmail } from '../../.';
 export const VEmailComponent = () => {
   const [vState, setvState] = React.useState<boolean>(false);
   const [vMessage, setvMessage] = React.useState<string>('');
-  const [message, setmessage] = React.useState<string>('test@test.com');
+  const [message, setMessage] = React.useState<string>('test@test.com');
 
   React.useEffect(() => {
     if (/^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i.test(message)) {
@@ -32,7 +32,7 @@ export const VEmailComponent = () => {
         vIsAnimate={true}
         props={{
           onChange: (e: { target: { value: string } }) => {
-            setmessage(e.target.value);
+            setMessage(e.target.value);
           },
           placeholder: 'this is react-validate-component test.',
           className: styles.input_text,

@@ -5,7 +5,7 @@ import { VURL } from '../../.';
 export const VURLComponent = () => {
   const [vState, setvState] = React.useState<boolean>(false);
   const [vMessage, setvMessage] = React.useState<string>('');
-  const [message, setmessage] = React.useState<string>('https://www.naver.com');
+  const [message, setMessage] = React.useState<string>('https://www.naver.com');
 
   React.useEffect(() => {
     if (/^http[s]?:\/\/([\S]{3,})/i.test(message)) {
@@ -32,7 +32,7 @@ export const VURLComponent = () => {
         vIsAnimate={true}
         props={{
           onChange: (e: { target: { value: string } }) => {
-            setmessage(e.target.value);
+            setMessage(e.target.value);
           },
           placeholder: 'this is react-validate-component test.',
           className: styles.input_text,
