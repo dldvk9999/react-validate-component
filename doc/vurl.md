@@ -55,7 +55,7 @@ const App = () => {
 export default App;
 ```
 
-#### Props
+#### Props - KR
 
 - `vState` (boolean): 유효성 상태 값입니다.
 - `vType` (`inner`, `outer`, `tooltip`): 유효성 메시지를 띄우는 타입입니다.
@@ -66,6 +66,8 @@ export default App;
 - `vMessageClass` (string): 유효성 메시지에 입힐 class 명입니다.
 - `vIsAnimate` (boolean): 유효성 메시지 출력 시 애니메이션 적용할지 여부입니다. (현재는 opacity만 적용되어있습니다.)
 - `props` (object): 기타 옵션입니다. 기본 input 태그에 attribute로 넣을 값들을 입력하시면 됩니다.
+
+#### Props - EN
 
 - `vState` (boolean): The validity status value.
 - `vType` (`inner`, `outer`, `tooltip`): The type of validation message display.
