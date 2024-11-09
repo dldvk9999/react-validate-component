@@ -6,14 +6,19 @@ import * as VComponent from './component';
 
 const App = () => {
   return (
-    <section className={styles.layout}>
-      <h1>React-Validate-Component</h1>
-      <VComponent.VTextComponent />
-      <VComponent.VCheckboxComponent />
-      <VComponent.VURLComponent />
-      <VComponent.VEmailComponent />
-      <VComponent.VRadioComponent />
-    </section>
+    <>
+      <section className={styles.title}>
+        <h1>React-Validate-Component</h1>
+      </section>
+      <section className={styles.layout}>
+        <VComponent.VTextComponent />
+        <VComponent.VCheckboxComponent />
+        <VComponent.VURLComponent />
+        <VComponent.VEmailComponent />
+        <VComponent.VRadioComponent />
+        <VComponent.VColorComponent />
+      </section>
+    </>
   );
 };
 
