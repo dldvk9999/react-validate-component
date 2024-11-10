@@ -1,8 +1,8 @@
-### VColor Component
+### VRange Component
 
-`VColor` 컴포넌트는 기본적인 URL 필드에 유효성 검사 문구를 출력해주는 기능을 제공합니다.
+`VRange` 컴포넌트는 기본적인 URL 필드에 유효성 검사 문구를 출력해주는 기능을 제공합니다.
 
-The `VColor` component provides functionality to display validation messages for basic color fields.
+The `VRange` component provides functionality to display validation messages for basic range fields.
 
 #### 사용 예제, Example
 
@@ -13,23 +13,23 @@ import { VColor } from 'react-validate-component';
 const App = () => {
   const [vState, setvState] = React.useState < boolean > false;
   const [vMessage, setvMessage] = React.useState < string > '';
-  const [message, setMessage] = React.useState < string > '';
+  const [rangeValue, setRangeValue] = React.useState < number > 50;
 
   React.useEffect(() => {
-    if (message !== '') {
+    if (rangeValue < 80) {
       setvState(false);
       setvMessage('');
     } else {
       setvState(true);
-      setvMessage('Choose Color.');
+      setvMessage('IT MUST BE BELOW 80.');
     }
-  }, [message]);
+  }, [rangeValue]);
 
   return (
     <div>
-      <h2>VColor</h2>
-      <h3>Choose Color.</h3>
-      <VColor
+      <h2>VRange</h2>
+      <h3>Select Range.</h3>
+      <VRange
         vState={vState}
         vType={'bottom'}
         vClassName={'test'}
@@ -39,11 +39,15 @@ const App = () => {
         vIsAnimate={true}
         props={{
           onChange: (e: { target: { value: string } }) => {
-            setMessage(e.target.value);
+            setRangeValue(~~e.target.value);
           },
+          min: 0,
+          max: 100,
+          step: 10,
+          value: rangeValue,
         }}
       />
-      now Color: {message}
+      now Range: {rangeValue}
     </div>
   );
 };
