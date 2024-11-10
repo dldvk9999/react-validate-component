@@ -17,6 +17,7 @@ const App = () => {
         <VComponent.VEmailComponent />
         <VComponent.VRadioComponent />
         <VComponent.VColorComponent />
+        <VComponent.VRangeComponent />
       </section>
     </>
   );

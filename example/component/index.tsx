@@ -4,6 +4,7 @@ import { VURLComponent } from './vURL';
 import { VEmailComponent } from './vEmail';
 import { VRadioComponent } from './vRadio';
 import { VColorComponent } from './vColor';
+import { VRangeComponent } from './vRange';
 
 export {
   VTextComponent,
@@ -12,4 +13,5 @@ export {
   VEmailComponent,
   VRadioComponent,
   VColorComponent,
+  VRangeComponent,
 };
