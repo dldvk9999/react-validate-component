@@ -18,6 +18,7 @@ const App = () => {
         <VComponent.VRadioComponent />
         <VComponent.VColorComponent />
         <VComponent.VRangeComponent />
+        <VComponent.VDateComponent />
       </section>
     </>
   );
