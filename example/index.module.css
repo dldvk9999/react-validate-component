@@ -16,7 +16,7 @@ body {
   padding: 10px 20px;
 }
 .title {
-  background: linear-gradient(180deg, var(--sky) 70%, var(--white, white) 100%);
+  background: linear-gradient(180deg, var(--sky) 75%, transparent 100%);
   color: var(--title-color, black);
   text-shadow: 6px 6px 10px var(--title-shadow-color);
   display: flex;
@@ -24,23 +24,18 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  font-size: 4rem;
   line-height: 2;
   font-family: 'Dancing Script', cursive;
   transition: all 0.5s ease-in-out;
   cursor: default;
+  position: relative;
 }
-.title > * {
+.title > h1 {
   margin: 0;
-}
-.title.top {
-  position: fixed;
-  height: 6rem;
-  width: 100%;
-  font-size: 1.5rem;
-}
-.title.top > h1 {
-  transform: translateY(-15px);
+  padding-bottom: 3.5rem;
+  position: sticky;
+  top: 0;
+  font-size: 100px;
 }
 .layout {
   background-color: var(--white, white);
@@ -52,7 +47,8 @@ body {
   column-gap: 10rem;
   row-gap: 5rem;
   min-height: 100vh;
-  padding-top: 14rem;
+  padding-top: 15rem;
+  padding-bottom: 100rem;
 }
 .layout > div {
   display: flex;

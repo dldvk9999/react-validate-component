@@ -1,24 +1,32 @@
 import 'react-app-polyfill/ie11';
-import * as React from 'react';
+import { useEffect, useCallback, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
 import styles from './index.module.css';
 import * as VComponent from './component';
 
 const App = () => {
-  const [isTop, setTop] = React.useState<boolean>(true);
+  const headerArea = useRef<HTMLElement>(null);
+  const title = useRef<HTMLHeadingElement>(null);
 
-  React.useEffect(() => {
+  const handleScroll = useCallback(() => {
+    title.current!.style.fontSize = `${Math.min(Math.max((1000 - window.scrollY) / 5, 45), 100)}px`;
+    title.current!.style.opacity = `${Math.min(Math.max((1000 - window.scrollY) / 1000 * 1.5, 0), 1)}`;
+  }, []);
+
+  const callback = useCallback(([entry]) => {
+    if (entry.intersectionRatio <= 0.5) {
+      window.addEventListener('scroll', handleScroll);
+    } else {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
+  useEffect(() => {
     window.scrollTo({ top: 0 });
 
-    const handleScroll = () => {
-      if (window.scrollY !== 0) setTop(false);
-      else setTop(true);
-    };
+    const observer = new IntersectionObserver(callback, { threshold: 0.5 });
+    observer.observe(headerArea.current!);
 
-    // window에 scroll 이벤트를 넣는다.
-    window.addEventListener('scroll', handleScroll);
-
-    // 페이지를 벗어날 때 이벤트를 제거한다.
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -26,8 +34,8 @@ const App = () => {
 
   return (
     <main>
-      <section className={`${styles.title} ${isTop ? '' : styles.top}`}>
-        <h1>React-Validate-Component</h1>
+      <section ref={headerArea} className={styles.title}>
+        <h1 ref={title}>React-Validate-Component</h1>
       </section>
       <section className={styles.layout}>
         <VComponent.VTextComponent />
