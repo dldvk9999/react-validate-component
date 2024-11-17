@@ -90,6 +90,11 @@ body {
 .validation_message {
   color: red;
 }
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .label_class {
   border-radius: 15px;

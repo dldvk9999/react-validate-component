@@ -11,6 +11,7 @@ describe('VCheckbox', () => {
         vState={true}
         vType={'bottom'}
         vClassName={'test'}
+        vLayoutClassName={'test'}
         vLabelClassName={'test'}
         vCheckedClassName={'test'}
         vCheckList={[]}

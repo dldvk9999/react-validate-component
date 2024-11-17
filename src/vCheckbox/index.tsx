@@ -6,6 +6,7 @@ export function VCheckbox({
   vState = false,
   vType = 'bottom',
   vClassName = '',
+  vLayoutClassName = '',
   vLabelClassName = '',
   vCheckedClassName = '',
   vCheckList = [],
@@ -41,13 +42,13 @@ export function VCheckbox({
         </label>
       );
     });
-    return <div className={styles.checkbox_layout}>{result}</div>;
+    return <div className={vLayoutClassName}>{result}</div>;
   }
 
   switch (vType) {
     case 'top':
       return (
-        <div className={styles.flex_column}>
+        <div>
           {vState && vShowMessage ? (
             <p
               className={`${vMessageClass} ${
@@ -62,7 +63,7 @@ export function VCheckbox({
       );
     case 'bottom':
       return (
-        <div className={styles.flex_column}>
+        <div>
           {makeCheckList()}
           {vState && vShowMessage ? (
             <p

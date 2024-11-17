@@ -28,6 +28,7 @@ export const VCheckboxComponent = () => {
         vState={vState}
         vType={'bottom'}
         // vClassName={'test'}
+        vLayoutClassName={styles.flex}
         vLabelClassName={styles.label_class}
         vCheckedClassName={styles.label_check_class}
         vCheckList={list}

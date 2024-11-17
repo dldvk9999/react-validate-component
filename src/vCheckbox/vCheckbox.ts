@@ -6,6 +6,7 @@ export interface VCHECKBOX_PARAMS {
   readonly vType: // 유효성 메시지를 출력할 타입
   'top' | 'bottom';
   vClassName?: string; // 유효성 입힐 class 명
+  vLayoutClassName?: string; // 체크박스 레이아웃 class 명
   vLabelClassName?: string; // label class 명
   vCheckedClassName?: string; // checked 되었을 때 class 명
   vCheckList: string[]; // checkbox 리스트
