@@ -57,7 +57,7 @@
   "bugs": {
     "url": "https://github.com/dldvk9999/react-validate-component/issues"
   },
-  "homepage": "https://github.com/dldvk9999/react-validate-component",
+  "homepage": "https://react-validate-component.vercel.app/",
   "module": "dist/react-validate-component.esm.js",
   "size-limit": [
     {
