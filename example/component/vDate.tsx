@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '../index.module.css';
-import { VDate } from '../../dist';
+import { VDate } from 'react-validate-component';
 
 export const VDateComponent = () => {
   const [vState, setvState] = React.useState<boolean>(false);

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '../index.module.css';
-import { VCheckbox } from '../../dist';
+import { VCheckbox } from 'react-validate-component';
 
 export const VCheckboxComponent = () => {
   const list = ['Tiger', 'Rabbit', 'Elephant', 'Dog', 'Pig', 'Cat', 'Duck'];

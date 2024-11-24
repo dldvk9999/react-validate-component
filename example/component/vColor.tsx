@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '../index.module.css';
-import { VColor } from '../../dist';
+import { VColor } from 'react-validate-component';
 
 export const VColorComponent = () => {
   const [vState, setvState] = React.useState<boolean>(false);

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '../index.module.css';
-import { VRange } from '../../dist';
+import { VRange } from 'react-validate-component';
 
 export const VRangeComponent = () => {
   const [vState, setvState] = React.useState<boolean>(false);

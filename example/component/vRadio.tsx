@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '../index.module.css';
-import { VRadio } from '../../dist';
+import { VRadio } from 'react-validate-component';
 
 export const VRadioComponent = () => {
   const [vState, setvState] = React.useState<boolean>(false);

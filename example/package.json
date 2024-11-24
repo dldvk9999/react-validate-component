@@ -9,7 +9,8 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-app-polyfill": "^1.0.0",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-validate-component": "^0.8.1"
   },
   "alias": {
     "scheduler/tracing": "../node_modules/scheduler/tracing-profiling"
