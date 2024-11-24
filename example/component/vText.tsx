@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '../index.module.css';
-import { VText } from '../../.';
+import { VText } from '../../dist';
 
 export const VTextComponent = () => {
   const [vState, setvState] = React.useState<boolean>(false);

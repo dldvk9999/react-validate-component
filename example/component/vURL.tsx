@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '../index.module.css';
-import { VURL } from '../../.';
+import { VURL } from '../../dist';
 
 export const VURLComponent = () => {
   const [vState, setvState] = React.useState<boolean>(false);

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '../index.module.css';
-import { VEmail } from '../../.';
+import { VEmail } from '../../dist';
 
 export const VEmailComponent = () => {
   const [vState, setvState] = React.useState<boolean>(false);
