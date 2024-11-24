@@ -10,6 +10,19 @@
   --aside-color: #f3b0c3;
   --footer-color: #cbaacb;
 }
+
+body::-webkit-scrollbar {
+  width: 10px;
+  display: block;
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--sky);
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-button,
+body::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
 body {
   margin: 0;
 }
