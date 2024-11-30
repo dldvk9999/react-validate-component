@@ -1,8 +1,8 @@
 # react-validate-component
 
-`react-validate-component`는 리액트 애플리케이션에서 입력 유효성 검사를 간편하게 처리할 수 있도록 도와주는 라이브러리입니다. 현재 `VText` 컴포넌트가 구현되어 있으며, 이 컴포넌트를 사용하여 간단하게 텍스트 입력의 유효성을 검사할 수 있습니다.
+`react-validate-component`는 리액트에서 입력 유효성 검사를 간편하게 처리할 수 있도록 도와주는 라이브러리입니다. 이 컴포넌트를 사용하여 간단하게 입력의 유효성을 검사할 수 있습니다.
 
-`react-validate-component` is a library that helps simplify input validation in React applications. Currently, it includes the `VText` component, which allows for easy validation of text input.
+`react-validate-component` is a library that helps simplify input validation in React. Which allows for easy validation of input.
 
 ## 설치, Install
 
@@ -50,10 +50,8 @@ The library currently includes the `vText`, `vCheckbox`, `vURL`, `vEmail`, `vRad
 ## 개발중인 기능, Features in Development
 
 - 추가적인 유효성 검사 규칙 및 에러 메시지 처리 기능이 계획되어 있습니다.
-- react-validate-component를 소개하는 홈페이지가 제작 중입니다.
 
 - Additional validation rules and error message handling features are also in the pipeline.
-- A homepage introducing react-validate-component is under construction.
 
 ## 기여, Contributions
 
