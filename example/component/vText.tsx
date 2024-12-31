@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '../index.module.css';
-import { VText } from '../../src/index';
+import { VText } from 'react-validate-component';
 
 export const VTextComponent = () => {
   const [vState, setvState] = React.useState<boolean>(false);
