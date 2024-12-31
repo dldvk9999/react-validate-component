@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '../index.module.css';
-import { VText } from 'react-validate-component';
+import { VText } from '../../src/index';
 
 export const VTextComponent = () => {
   const [vState, setvState] = React.useState<boolean>(false);
@@ -30,6 +30,9 @@ export const VTextComponent = () => {
         vLocateMessage={'bottom-left'}
         vMessageClass={styles.validation_message}
         vIsAnimate={true}
+        vUseMaxLength={true}
+        vMaxLength={30}
+        // vClassMaxLength={'test'}
         props={{
           onChange: (e: { target: { value: string } }) => {
             setMessage(e.target.value);

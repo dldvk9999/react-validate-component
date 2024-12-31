@@ -20,5 +20,8 @@ export interface VTEXT_PARAMS {
     | 'bottom-right';
   vMessageClass?: string; // 유효성 메시지에 입힐 class 명
   vIsAnimate?: boolean; // 유효성 메시지 출력 시 애니메이션 적용할지
+  vUseMaxLength?: boolean; // 입력 최댓값 표시 사용 여부
+  vMaxLength?: number; // 입력 최댓값
+  vClassMaxLength?: string; // 입력 최댓값 class 명
   props?: propsType; // 기타 옵션
 }

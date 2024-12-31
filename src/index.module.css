@@ -7,6 +7,21 @@
 .invalid:focus-within {
   border: 2px solid red;
 }
+.vMaxLengthContainer {
+  position: relative;
+}
+.vMaxLengthContainer > input[type='text'] {
+  padding-right: 70px;
+}
+.vMaxLengthContainer .vMaxLength {
+  color: #555;
+  font-size: 0.8rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 0;
+  padding: 16px;
+}
 
 /* vType === 'outer' */
 .vinput {
