@@ -40,6 +40,9 @@ const App = () => {
           vLocateMessage={'bottom-left'}
           vMessageClass={styles.validation_message}
           vIsAnimate={true}
+          vUseMaxLength={true}
+          vMaxLength={30}
+          vClassMaxLength={'test'}
           props={{
             onChange: (e: { target: { value: string } }) => {
               setMessage(e.target.value);
@@ -67,6 +70,9 @@ export default App;
 - `vLocateMessage` (`top-left`, `top`, `top-right`, `center-left`, `center`, `center-right`, `bottom-left`, `bottom`, `bottom-right`): 유효성 메시지를 element 어디에 붙일지 위치값입니다.
 - `vMessageClass` (string): 유효성 메시지에 입힐 class 명입니다.
 - `vIsAnimate` (boolean): 유효성 메시지 출력 시 애니메이션 적용할지 여부입니다. (현재는 opacity만 적용되어있습니다.)
+- `vUseMaxLength` (boolean): 입력 최댓값 사용 여부입니다.
+- `vMaxLength` (number): 입력 최댓값입니다.
+- `vClassMaxLength` (string): 입력 최댓값에 입힐 class 명입니다.
 - `props` (object): 기타 옵션입니다. 기본 input 태그에 attribute로 넣을 값들을 입력하시면 됩니다.
 
 #### Props - EN
@@ -79,4 +85,7 @@ export default App;
 - `vLocateMessage` (`top-left`, `top`, `top-right`, `center-left`, `center`, `center-right`, `bottom-left`, `bottom`, `bottom-right`): The position where the validation message should be displayed relative to the element.
 - `vMessageClass` (string): The class name to apply to the validation message.
 - `vIsAnimate` (boolean): Whether to apply animation when displaying the validation message (currently, only opacity animation is supported).
+- `vUseMaxLength` (boolean): Whether to use the maximum input value.
+- `vMaxLength` (number): Maximum input value.
+- `vClassMaxLength` (string): The class name to apply to the maximum input value.
 - `props` (object): Other options. Enter values for attributes that can be added to the basic input tag.
