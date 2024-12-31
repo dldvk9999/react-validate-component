@@ -16,6 +16,9 @@ describe('VText', () => {
         vLocateMessage={'bottom-left'}
         vMessageClass={'test'}
         vIsAnimate={true}
+        vUseMaxLength={true}
+        vMaxLength={30}
+        vClassMaxLength={'test'}
         props={{
           onChange: () => {},
           placeholder: 'this is react-validate-component test.',
