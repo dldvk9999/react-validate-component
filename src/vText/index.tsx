@@ -48,12 +48,12 @@ export function VText({
     props = { ...props, maxLength: vMaxLength };
   }
 
-  // 입력 최댓값을 사용할 경우 useEffect Hook 설정
-  if (vUseMaxLength) {
-    React.useEffect(() => {
+  React.useEffect(() => {
+    // 입력 최댓값을 사용할 경우 useEffect Hook 설정
+    if (vUseMaxLength) {
       setInputLength((inputRef.current?.value ?? '').length);
-    }, [inputRef.current?.value]);
-  }
+    }
+  }, [inputRef.current?.value]);
 
   switch (vType) {
     case 'outer':
