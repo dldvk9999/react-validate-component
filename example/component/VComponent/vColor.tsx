@@ -1,27 +1,27 @@
 import * as React from 'react';
-import styles from '../index.module.css';
-import { VDate } from 'react-validate-component';
+import styles from '../../index.module.css';
+import { VColor } from 'react-validate-component';
 
-export const VDateComponent = () => {
+export const VColorComponent = () => {
   const [vState, setvState] = React.useState<boolean>(false);
   const [vMessage, setvMessage] = React.useState<string>('');
-  const [dateValue, setDateValue] = React.useState<string>('');
+  const [message, setMessage] = React.useState<string>('');
 
   React.useEffect(() => {
-    if (dateValue !== '') {
+    if (message !== '') {
       setvState(false);
       setvMessage('');
     } else {
       setvState(true);
-      setvMessage('Select Date.');
+      setvMessage('Choose Color.');
     }
-  }, [dateValue]);
+  }, [message]);
 
   return (
     <div>
-      <h2>VDate</h2>
-      <h3>Select Date.</h3>
-      <VDate
+      <h2>VColor</h2>
+      <h3>Choose Color.</h3>
+      <VColor
         vState={vState}
         vType={'bottom'}
         vClassName={'test'}
@@ -31,14 +31,11 @@ export const VDateComponent = () => {
         vIsAnimate={true}
         props={{
           onChange: (e: { target: { value: string } }) => {
-            setDateValue(e.target.value);
+            setMessage(e.target.value);
           },
-          min: '2024-01-01',
-          max: '2024-12-31',
-          value: dateValue,
         }}
       />
-      now Date: {dateValue}
+      now Color: {message}
     </div>
   );
 };

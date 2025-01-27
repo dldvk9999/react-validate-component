@@ -1,27 +1,27 @@
 import * as React from 'react';
-import styles from '../index.module.css';
-import { VEmail } from 'react-validate-component';
+import styles from '../../index.module.css';
+import { VText } from 'react-validate-component';
 
-export const VEmailComponent = () => {
+export const VTextComponent = () => {
   const [vState, setvState] = React.useState<boolean>(false);
   const [vMessage, setvMessage] = React.useState<string>('');
-  const [message, setMessage] = React.useState<string>('test@test.com');
+  const [message, setMessage] = React.useState<string>('');
 
   React.useEffect(() => {
-    if (/^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i.test(message)) {
+    if (/[\d]/gim.exec(message)) {
+      setvState(true);
+      setvMessage('Numbers cannot be entered.');
+    } else {
       setvState(false);
       setvMessage('');
-    } else {
-      setvState(true);
-      setvMessage('IT MUST BE EMAIL.');
     }
   }, [message]);
 
   return (
     <div>
-      <h2>VEmail</h2>
-      <h3>INPUT EMail.</h3>
-      <VEmail
+      <h2>VText</h2>
+      <h3>DO NOT INPUT NUMBER.</h3>
+      <VText
         vState={vState}
         vType={'outer'}
         // vClassName={'test'}
@@ -30,13 +30,16 @@ export const VEmailComponent = () => {
         vLocateMessage={'bottom-left'}
         vMessageClass={styles.validation_message}
         vIsAnimate={true}
+        vUseMaxLength={true}
+        vMaxLength={30}
+        // vClassMaxLength={'test'}
         props={{
           onChange: (e: { target: { value: string } }) => {
             setMessage(e.target.value);
           },
           placeholder: 'this is react-validate-component test.',
           className: styles.input_text,
-          defaultValue: 'test@test.com',
+          defaultValue: 'test',
         }}
       />
     </div>

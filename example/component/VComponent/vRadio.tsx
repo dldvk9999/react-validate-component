@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '../index.module.css';
+import styles from '../../index.module.css';
 import { VRadio } from 'react-validate-component';
 
 export const VRadioComponent = () => {
