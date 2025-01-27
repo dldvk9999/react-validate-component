@@ -2,13 +2,23 @@ import 'react-app-polyfill/ie11';
 import { useEffect, useCallback, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
 import styles from './index.module.css';
-import * as VComponent from './component/VComponent';
 import Nav from './component/Nav/nav';
 import Footer from './component/Footer/footer';
+import Body from './component/Body/body';
 
 const App = () => {
   const headerArea = useRef<HTMLElement>(null);
   const title = useRef<HTMLHeadingElement>(null);
+  const components = [
+    'VText',
+    'VCheckbox',
+    'VURL',
+    'VEmail',
+    'VRadio',
+    'VColor',
+    'VRange',
+    'VDate',
+  ];
 
   // 스크롤을 감지해서 타이틀의 fontSize와 opacity를 조절
   const handleScroll = useCallback(() => {
@@ -49,33 +59,8 @@ const App = () => {
         <h1 ref={title}>React-Validate-Component</h1>
       </header>
       <div className={styles.layout}>
-        <Nav />
-        <section className={styles.components}>
-          <div id="VText">
-            <VComponent.VTextComponent />
-          </div>
-          <div id="VCheckbox">
-            <VComponent.VCheckboxComponent />
-          </div>
-          <div id="VURL">
-            <VComponent.VURLComponent />
-          </div>
-          <div id="VEmail">
-            <VComponent.VEmailComponent />
-          </div>
-          <div id="VRadio">
-            <VComponent.VRadioComponent />
-          </div>
-          <div id="VColor">
-            <VComponent.VColorComponent />
-          </div>
-          <div id="VRange">
-            <VComponent.VRangeComponent />
-          </div>
-          <div id="VDate">
-            <VComponent.VDateComponent />
-          </div>
-        </section>
+        <Nav components={components} />
+        <Body components={components} />
       </div>
       <Footer />
     </main>
