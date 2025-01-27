@@ -2,33 +2,33 @@ import * as React from 'react';
 import styles from '../../index.module.css';
 import { VDate } from 'react-validate-component';
 
-export const VDateComponent = () => {
-  const [vState, setvState] = React.useState<boolean>(false);
-  const [vMessage, setvMessage] = React.useState<string>('');
-  const [dateValue, setDateValue] = React.useState<string>('');
+type params = {
+  settings: {
+    vState: boolean;
+    vType: 'top' | 'bottom';
+    vShowMessage: boolean;
+    vMessage: string;
+    vIsAnimate: boolean;
+    vUseMaxLength: boolean;
+    vMaxLength: number;
+  };
+};
 
-  React.useEffect(() => {
-    if (dateValue !== '') {
-      setvState(false);
-      setvMessage('');
-    } else {
-      setvState(true);
-      setvMessage('Select Date.');
-    }
-  }, [dateValue]);
+export const VDateComponent = ({ settings }: params) => {
+  const [dateValue, setDateValue] = React.useState<string>('');
 
   return (
     <div>
       <h2>VDate</h2>
       <h3>Select Date.</h3>
       <VDate
-        vState={vState}
-        vType={'bottom'}
-        vClassName={'test'}
-        vShowMessage={true}
-        vMessage={vMessage}
+        vState={settings.vState}
+        vType={settings.vType}
+        // vClassName={'test'}
+        vShowMessage={settings.vShowMessage}
+        vMessage={settings.vMessage}
         vMessageClass={styles.validation_message}
-        vIsAnimate={true}
+        vIsAnimate={settings.vIsAnimate}
         props={{
           onChange: (e: { target: { value: string } }) => {
             setDateValue(e.target.value);

@@ -20,7 +20,7 @@ export default function Nav({ components = [] }: params) {
   }, []);
 
   return (
-    <aside className={styles.aside}>
+    <aside className={`${styles.aside} ${styles.left}`}>
       <ul>{drawNavs()}</ul>
     </aside>
   );

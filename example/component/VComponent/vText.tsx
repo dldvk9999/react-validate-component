@@ -1,42 +1,47 @@
-import * as React from 'react';
 import styles from '../../index.module.css';
 import { VText } from 'react-validate-component';
 
-export const VTextComponent = () => {
-  const [vState, setvState] = React.useState<boolean>(false);
-  const [vMessage, setvMessage] = React.useState<string>('');
-  const [message, setMessage] = React.useState<string>('');
+type params = {
+  settings: {
+    vState: boolean;
+    vType: 'inner' | 'outer' | 'tooltip';
+    vShowMessage: boolean;
+    vMessage: string;
+    vLocateMessage:
+      | 'top-left'
+      | 'top'
+      | 'top-right'
+      | 'center-left'
+      | 'center'
+      | 'center-right'
+      | 'bottom-left'
+      | 'bottom'
+      | 'bottom-right';
+    vIsAnimate: boolean;
+    vUseMaxLength: boolean;
+    vMaxLength: number;
+  };
+};
 
-  React.useEffect(() => {
-    if (/[\d]/gim.exec(message)) {
-      setvState(true);
-      setvMessage('Numbers cannot be entered.');
-    } else {
-      setvState(false);
-      setvMessage('');
-    }
-  }, [message]);
-
+export const VTextComponent = ({ settings }: params) => {
   return (
     <div>
       <h2>VText</h2>
       <h3>DO NOT INPUT NUMBER.</h3>
       <VText
-        vState={vState}
-        vType={'outer'}
+        vState={settings.vState}
+        vType={settings.vType}
         // vClassName={'test'}
-        vShowMessage={true}
-        vMessage={vMessage}
-        vLocateMessage={'bottom-left'}
+        vShowMessage={settings.vShowMessage}
+        vMessage={settings.vMessage}
+        vLocateMessage={settings.vLocateMessage}
         vMessageClass={styles.validation_message}
-        vIsAnimate={true}
-        vUseMaxLength={true}
-        vMaxLength={30}
+        vIsAnimate={settings.vIsAnimate}
+        vUseMaxLength={settings.vUseMaxLength}
+        vMaxLength={settings.vMaxLength}
         // vClassMaxLength={'test'}
         props={{
-          onChange: (e: { target: { value: string } }) => {
-            setMessage(e.target.value);
-          },
+          onChange: () => {},
           placeholder: 'this is react-validate-component test.',
           className: styles.input_text,
           defaultValue: 'test',

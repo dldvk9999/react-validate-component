@@ -4,9 +4,10 @@ import { useCallback } from 'react';
 
 type params = {
   components: string[];
+  settings: object;
 };
 
-export default function Body({ components = [] }: params) {
+export default function Body({ components = [], settings = {} }: params) {
   // Body 아이템 동적 생성
   const drawBody = useCallback(() => {
     const result: any = [];
@@ -14,12 +15,12 @@ export default function Body({ components = [] }: params) {
       const VElement = VComponent[`${components[i]}Component`];
       result.push(
         <div key={i} id={components[i]}>
-          <VElement />
+          <VElement settings={settings} />
         </div>
       );
     }
     return result;
-  }, []);
+  }, [settings]);
 
   return <section className={styles.components}>{drawBody()}</section>;
 }

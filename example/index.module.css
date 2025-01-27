@@ -80,17 +80,29 @@ body {
   position: sticky;
   top: 3rem;
   width: 15rem;
-  border-right: 2px solid var(--aside-color);
 }
 .aside > ul {
   list-style-type: none;
 }
-.aside > ul > li {
+.aside.left > ul > li {
   height: 3rem;
+}
+.aside.right > ul > li {
+  display: flex;
+  flex-direction: column;
+}
+.aside.right > ul > li > h2 {
+  margin: 0;
 }
 .aside > ul > li > a {
   color: var(--black, black);
   text-decoration: none;
+}
+.aside.left {
+  border-right: 2px solid var(--aside-color);
+}
+.aside.right {
+  border-left: 2px solid var(--aside-color);
 }
 .components {
   width: 80%;

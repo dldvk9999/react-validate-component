@@ -2,33 +2,33 @@ import * as React from 'react';
 import styles from '../../index.module.css';
 import { VRange } from 'react-validate-component';
 
-export const VRangeComponent = () => {
-  const [vState, setvState] = React.useState<boolean>(false);
-  const [vMessage, setvMessage] = React.useState<string>('');
-  const [rangeValue, setRangeValue] = React.useState<number>(50);
+type params = {
+  settings: {
+    vState: boolean;
+    vType: 'top' | 'bottom';
+    vShowMessage: boolean;
+    vMessage: string;
+    vIsAnimate: boolean;
+    vUseMaxLength: boolean;
+    vMaxLength: number;
+  };
+};
 
-  React.useEffect(() => {
-    if (rangeValue < 80) {
-      setvState(false);
-      setvMessage('');
-    } else {
-      setvState(true);
-      setvMessage('IT MUST BE BELOW 80.');
-    }
-  }, [rangeValue]);
+export const VRangeComponent = ({ settings }: params) => {
+  const [rangeValue, setRangeValue] = React.useState<number>(50);
 
   return (
     <div>
       <h2>VRange</h2>
       <h3>Select Range.</h3>
       <VRange
-        vState={vState}
-        vType={'bottom'}
+        vState={settings.vState}
+        vType={settings.vType}
         vClassName={'test'}
-        vShowMessage={true}
-        vMessage={vMessage}
+        vShowMessage={settings.vShowMessage}
+        vMessage={settings.vMessage}
         vMessageClass={styles.validation_message}
-        vIsAnimate={true}
+        vIsAnimate={settings.vIsAnimate}
         props={{
           onChange: (e: { target: { value: string } }) => {
             setRangeValue(~~e.target.value);

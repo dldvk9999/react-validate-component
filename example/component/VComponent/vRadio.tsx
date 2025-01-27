@@ -2,10 +2,29 @@ import * as React from 'react';
 import styles from '../../index.module.css';
 import { VRadio } from 'react-validate-component';
 
-export const VRadioComponent = () => {
-  const [vState, setvState] = React.useState<boolean>(false);
-  const [vMessage, setvMessage] = React.useState<string>('');
-  const [nowSelect, setNowSelect] = React.useState<string>('');
+type params = {
+  settings: {
+    vState: boolean;
+    vType: 'top' | 'bottom' | 'tooltip';
+    vShowMessage: boolean;
+    vMessage: string;
+    vLocateMessage:
+      | 'top-left'
+      | 'top'
+      | 'top-right'
+      | 'center-left'
+      | 'center'
+      | 'center-right'
+      | 'bottom-left'
+      | 'bottom'
+      | 'bottom-right';
+    vIsAnimate: boolean;
+    vUseMaxLength: boolean;
+    vMaxLength: number;
+  };
+};
+
+export const VRadioComponent = ({ settings }: params) => {
   const selectList = [
     {
       name: 'one',
@@ -29,36 +48,24 @@ export const VRadioComponent = () => {
     },
   ];
 
-  React.useEffect(() => {
-    if (nowSelect !== '') {
-      setvState(false);
-      setvMessage('');
-    } else {
-      setvState(true);
-      setvMessage('IT MUST BE SELECT.');
-    }
-  }, [nowSelect]);
-
   return (
     <div>
       <h2>VRadio</h2>
       <h3>Select Something.</h3>
       <VRadio
-        vState={vState}
+        vState={settings.vState}
         vName={'selectTest'}
         vSelectListName={selectList.map(obj => obj.name)}
         vSelectListValue={selectList.map(obj => obj.value)}
-        vType={'bottom'}
+        vType={settings.vType}
         vClassName={styles.radio_list_class}
-        vShowMessage={true}
-        vMessage={vMessage}
-        vLocateMessage={'bottom-left'}
+        vShowMessage={settings.vShowMessage}
+        vMessage={settings.vMessage}
+        vLocateMessage={settings.vLocateMessage}
         vMessageClass={styles.validation_message}
-        vIsAnimate={true}
+        vIsAnimate={settings.vIsAnimate}
         props={{
-          onChange: (e: { target: { value: string } }) => {
-            setNowSelect(e.target.value);
-          },
+          onChange: () => {},
         }}
       />
     </div>

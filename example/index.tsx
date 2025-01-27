@@ -1,15 +1,36 @@
 import 'react-app-polyfill/ie11';
-import { useEffect, useCallback, useRef } from 'react';
+import { useEffect, useCallback, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import styles from './index.module.css';
 import Nav from './component/Nav/nav';
 import Footer from './component/Footer/footer';
 import Body from './component/Body/body';
+import Common from './component/Nav/common';
+
+interface settings {
+  vState: boolean;
+  vType: 'top' | 'bottom' | 'inner' | 'outer' | 'tooltip';
+  vShowMessage: boolean;
+  vMessage: string;
+  vLocateMessage:
+    | 'top-left'
+    | 'top'
+    | 'top-right'
+    | 'center-left'
+    | 'center'
+    | 'center-right'
+    | 'bottom-left'
+    | 'bottom'
+    | 'bottom-right';
+  vIsAnimate: boolean;
+  vUseMaxLength: boolean;
+  vMaxLength: number;
+}
 
 const App = () => {
   const headerArea = useRef<HTMLElement>(null);
   const title = useRef<HTMLHeadingElement>(null);
-  const components = [
+  const components: string[] = [
     'VText',
     'VCheckbox',
     'VURL',
@@ -19,6 +40,16 @@ const App = () => {
     'VRange',
     'VDate',
   ];
+  const [settings, setSettings] = useState<settings>({
+    vState: false,
+    vType: 'top',
+    vShowMessage: true,
+    vMessage: 'Its wrong !!!',
+    vLocateMessage: 'top-left',
+    vIsAnimate: true,
+    vUseMaxLength: true,
+    vMaxLength: 30,
+  });
 
   // 스크롤을 감지해서 타이틀의 fontSize와 opacity를 조절
   const handleScroll = useCallback(() => {
@@ -60,7 +91,8 @@ const App = () => {
       </header>
       <div className={styles.layout}>
         <Nav components={components} />
-        <Body components={components} />
+        <Body components={components} settings={settings} />
+        <Common settings={settings} setSettings={setSettings} />
       </div>
       <Footer />
     </main>
