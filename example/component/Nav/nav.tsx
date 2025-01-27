@@ -20,7 +20,7 @@ export default function Nav() {
           <a href="#VRadio">VRadio</a>
         </li>
         <li>
-          <a href="#vColor">vColor</a>
+          <a href="#VColor">VColor</a>
         </li>
         <li>
           <a href="#VRange">VRange</a>

@@ -66,7 +66,7 @@ const App = () => {
           <div id="VRadio">
             <VComponent.VRadioComponent />
           </div>
-          <div id="vColor">
+          <div id="VColor">
             <VComponent.VColorComponent />
           </div>
           <div id="VRange">
