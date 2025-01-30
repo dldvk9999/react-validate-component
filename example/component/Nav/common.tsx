@@ -29,6 +29,7 @@ export default function Common({ settings, setSettings }: params) {
             type="radio"
             name={name}
             value={`${item}`}
+            checked={settings[name] === item}
             onChange={() => {
               setSettings({ ...settings, [name]: item });
             }}
@@ -55,6 +56,7 @@ export default function Common({ settings, setSettings }: params) {
                   type="radio"
                   name="vType"
                   value={item}
+                  checked={settings.vType === item}
                   onChange={() => {
                     setSettings({ ...settings, vType: item });
                   }}
@@ -87,6 +89,7 @@ export default function Common({ settings, setSettings }: params) {
                   type="radio"
                   name="vLocateMessage"
                   value={item}
+                  checked={settings.vLocateMessage === item}
                   onChange={() => {
                     setSettings({ ...settings, vLocateMessage: item });
                   }}
