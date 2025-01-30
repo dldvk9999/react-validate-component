@@ -26,6 +26,60 @@ body::-webkit-scrollbar-track {
 body {
   margin: 0;
 }
+input[type='number'],
+input[type='text'] {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+label {
+  line-height: 2rem;
+}
+
+[type='radio'],
+span {
+  vertical-align: middle;
+}
+
+[type='radio'] {
+  appearance: none;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+  transition: border 0.15s ease-out;
+  margin-right: 0.5rem;
+}
+
+[type='radio']:checked {
+  border: 0.4em solid #83b2f8;
+}
+
+[type='radio']:focus-visible {
+  outline-offset: max(2px, 0.1em);
+  outline: max(2px, 0.1em) dotted tomato;
+}
+
+[type='radio']:hover {
+  box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+  cursor: pointer;
+}
+
+[type='radio']:hover + span {
+  cursor: pointer;
+}
+
+[type='radio']:disabled {
+  background-color: lightgray;
+  box-shadow: none;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+[type='radio']:disabled + span {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
 .input_text {
   width: 300px;
   height: 50px;
@@ -103,6 +157,19 @@ body {
 }
 .aside.right {
   border-left: 2px solid var(--aside-color);
+  width: 23rem;
+  padding-right: 2rem;
+}
+.aside details {
+  font-size: 1.5rem;
+}
+.aside details > label {
+  width: 100%;
+  display: block;
+  font-size: 1.2rem;
+}
+.aside details > summary {
+  cursor: pointer;
 }
 .components {
   display: flex;
