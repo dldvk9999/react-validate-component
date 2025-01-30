@@ -13,6 +13,7 @@ export function VColor({
   props = {},
 }: VCOLOR_PARAMS) {
   switch (vType) {
+    default:
     case 'top':
       return (
         <>
@@ -47,7 +48,5 @@ export function VColor({
           ) : null}
         </>
       );
-    default:
-      return <></>;
   }
 }

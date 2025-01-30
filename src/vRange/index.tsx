@@ -13,6 +13,7 @@ export function VRange({
   props = {},
 }: VRANGE_PARAMS) {
   switch (vType) {
+    default:
     case 'top':
       return (
         <>
@@ -47,7 +48,5 @@ export function VRange({
           ) : null}
         </>
       );
-    default:
-      return <></>;
   }
 }

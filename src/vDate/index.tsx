@@ -13,6 +13,7 @@ export function VDate({
   props = {},
 }: VDATE_PARAMS) {
   switch (vType) {
+    default:
     case 'top':
       return (
         <>
@@ -47,7 +48,5 @@ export function VDate({
           ) : null}
         </>
       );
-    default:
-      return <></>;
   }
 }

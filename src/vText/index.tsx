@@ -58,6 +58,7 @@ export function VText({
   }, [inputRef.current?.value]);
 
   switch (vType) {
+    default:
     case 'outer':
       return (
         <div
@@ -130,7 +131,5 @@ export function VText({
           ) : null}
         </div>
       );
-    default:
-      return <div></div>;
   }
 }

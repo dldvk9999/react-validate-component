@@ -14,6 +14,7 @@ export function VEmail({
   props = {},
 }: VEMAIL_PARAMS) {
   switch (vType) {
+    default:
     case 'outer':
       return (
         <div
@@ -86,7 +87,5 @@ export function VEmail({
           ) : null}
         </div>
       );
-    default:
-      return <div></div>;
   }
 }

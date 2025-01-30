@@ -46,6 +46,7 @@ export function VCheckbox({
   }
 
   switch (vType) {
+    default:
     case 'top':
       return (
         <div>
@@ -76,7 +77,5 @@ export function VCheckbox({
           ) : null}
         </div>
       );
-    default:
-      return <></>;
   }
 }

@@ -38,6 +38,7 @@ export function VRadio({
   }
 
   switch (vType) {
+    default:
     case 'bottom':
       return (
         <>
@@ -103,7 +104,5 @@ export function VRadio({
           ) : null}
         </>
       );
-    default:
-      return <div></div>;
   }
 }

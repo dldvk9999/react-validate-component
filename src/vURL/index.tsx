@@ -14,6 +14,7 @@ export function VURL({
   props = {},
 }: VURL_PARAMS) {
   switch (vType) {
+    default:
     case 'outer':
       return (
         <div
@@ -86,7 +87,5 @@ export function VURL({
           ) : null}
         </div>
       );
-    default:
-      return <div></div>;
   }
 }
