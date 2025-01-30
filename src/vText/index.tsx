@@ -66,12 +66,14 @@ export function VText({
             vUseMaxLength ? styles.vMaxLengthContainer : ''
           }`}
         >
-          {inputHTML()}
-          {vUseMaxLength && (
-            <p className={`${styles.vMaxLength} ${vClassMaxLength}`}>
-              {inputLength} / {vMaxLength}
-            </p>
-          )}
+          <div style={{ position: 'relative' }}>
+            {inputHTML()}
+            {vUseMaxLength && (
+              <p className={`${styles.vMaxLength} ${vClassMaxLength}`}>
+                {inputLength} / {vMaxLength}
+              </p>
+            )}
+          </div>
           {vState && vShowMessage ? (
             <p
               className={`${vMessageClass} ${
