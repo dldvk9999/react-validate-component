@@ -1,5 +1,5 @@
 import styles from '../../index.module.css';
-import { VText } from 'react-validate-component';
+import { VText } from './moduleImport';
 
 type params = {
   settings: {

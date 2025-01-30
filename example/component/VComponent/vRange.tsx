@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '../../index.module.css';
-import { VRange } from 'react-validate-component';
+import { VRange } from './moduleImport';
 
 type params = {
   settings: {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '../../index.module.css';
-import { VColor } from 'react-validate-component';
+import { VColor } from './moduleImport';
 
 type params = {
   settings: {

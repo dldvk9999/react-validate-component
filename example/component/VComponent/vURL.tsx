@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '../../index.module.css';
-import { VURL } from 'react-validate-component';
+import { VURL } from './moduleImport';
 
 type params = {
   settings: {

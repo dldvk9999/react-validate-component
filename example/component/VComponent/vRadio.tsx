@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '../../index.module.css';
-import { VRadio } from 'react-validate-component';
+import { VRadio } from './moduleImport';
 
 type params = {
   settings: {

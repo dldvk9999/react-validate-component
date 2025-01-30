@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '../../index.module.css';
-import { VEmail } from 'react-validate-component';
+import { VEmail } from './moduleImport';
 
 type params = {
   settings: {
