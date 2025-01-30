@@ -1,7 +1,8 @@
+import { settingsType } from '../../types';
 import styles from '../../index.module.css';
 
 type params = {
-  settings: object;
+  settings: settingsType;
   setSettings: Function;
 };
 
@@ -23,10 +24,9 @@ export default function Common({ settings, setSettings }: params) {
   const drawBoolean = (name: string) => {
     return VBooleanValues.map((item, index) => {
       return (
-        <label htmlFor={name}>
+        <label htmlFor={name} key={index}>
           <input
             type="radio"
-            key={index}
             name={name}
             value={`${item}`}
             onChange={() => {
@@ -50,10 +50,9 @@ export default function Common({ settings, setSettings }: params) {
           <h2>vType</h2>
           {VTypeValues.map((item, index) => {
             return (
-              <label htmlFor="vType">
+              <label htmlFor="vType" key={index}>
                 <input
                   type="radio"
-                  key={index}
                   name="vType"
                   value={item}
                   onChange={() => {
@@ -73,7 +72,7 @@ export default function Common({ settings, setSettings }: params) {
           <h2>vMessage</h2>
           <input
             type="text"
-            value="Its Wrong !!!"
+            value={settings.vMessage}
             onChange={e =>
               setSettings({ ...settings, vMessage: e.target.value })
             }
@@ -83,10 +82,9 @@ export default function Common({ settings, setSettings }: params) {
           <h2>vLocateMessage</h2>
           {VLocateMessageValues.map((item, index) => {
             return (
-              <label htmlFor="vLocateMessage">
+              <label htmlFor="vLocateMessage" key={index}>
                 <input
                   type="radio"
-                  key={index}
                   name="vLocateMessage"
                   value={item}
                   onChange={() => {
@@ -110,7 +108,7 @@ export default function Common({ settings, setSettings }: params) {
           <h2>vMaxLength</h2>
           <input
             type="number"
-            value={30}
+            value={settings.vMaxLength}
             onChange={e =>
               setSettings({ ...settings, vMaxLength: e.target.value })
             }

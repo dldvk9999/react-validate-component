@@ -23,25 +23,27 @@ export function VText({
   );
 
   // 공통 input 태그 변수화
-  const inputHTML = (
-    <input
-      type="text"
-      ref={inputRef}
-      {...props}
-      onChange={e => {
-        if (vUseMaxLength && e.target.value.length > vMaxLength) {
-          e.preventDefault();
-          e.target.value = e.target.value.slice(0, vMaxLength);
-        } else {
-          props?.onChange(e);
-        }
-      }}
-      defaultValue={props?.defaultValue ?? ''}
-      className={`${props?.className ?? ''} ${vClassName} ${
-        vState ? styles.invalid : ''
-      }`}
-    ></input>
-  );
+  const inputHTML = () => {
+    return (
+      <input
+        type="text"
+        ref={inputRef}
+        {...props}
+        onChange={e => {
+          if (vUseMaxLength && e.target.value.length > vMaxLength) {
+            e.preventDefault();
+            e.target.value = e.target.value.slice(0, vMaxLength);
+          } else {
+            props?.onChange(e);
+          }
+        }}
+        defaultValue={props?.defaultValue ?? ''}
+        className={`${props?.className ?? ''} ${vClassName} ${
+          vState ? styles.invalid : ''
+        }`}
+      ></input>
+    );
+  };
 
   // 일부 옵션 값들은 input 기본 속성값을 이용하기 위해 merge 진행
   if (vUseMaxLength) {
@@ -63,7 +65,7 @@ export function VText({
             vUseMaxLength ? styles.vMaxLengthContainer : ''
           }`}
         >
-          {inputHTML}
+          {inputHTML()}
           {vUseMaxLength && (
             <p className={`${styles.vMaxLength} ${vClassMaxLength}`}>
               {inputLength} / {vMaxLength}
@@ -87,7 +89,7 @@ export function VText({
             vUseMaxLength ? styles.vMaxLengthContainer : ''
           }`}
         >
-          {inputHTML}
+          {inputHTML()}
           {vUseMaxLength && (
             <p className={`${styles.vMaxLength} ${vClassMaxLength}`}>
               {inputLength} / {vMaxLength}
@@ -111,7 +113,7 @@ export function VText({
             styles[`tooltipMessage-${vLocateMessage}`]
           } ${vUseMaxLength ? styles.vMaxLengthContainer : ''}`}
         >
-          {inputHTML}
+          {inputHTML()}
           {vUseMaxLength && (
             <p className={`${styles.vMaxLength} ${vClassMaxLength}`}>
               {inputLength} / {vMaxLength}

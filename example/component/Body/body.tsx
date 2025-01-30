@@ -1,5 +1,6 @@
 import styles from '../../index.module.css';
 import * as VComponent from '../../component/VComponent';
+// import * as VComponent from '../../../src';
 import { useCallback } from 'react';
 
 type params = {
@@ -13,6 +14,7 @@ export default function Body({ components = [], settings = {} }: params) {
     const result: any = [];
     for (let i = 0; i < components.length; i += 1) {
       const VElement = VComponent[`${components[i]}Component`];
+      //   const VElement = VComponent[`${components[i]}`];
       result.push(
         <div key={i} id={components[i]}>
           <VElement settings={settings} />

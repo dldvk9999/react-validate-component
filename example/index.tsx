@@ -6,26 +6,7 @@ import Nav from './component/Nav/nav';
 import Footer from './component/Footer/footer';
 import Body from './component/Body/body';
 import Common from './component/Nav/common';
-
-interface settings {
-  vState: boolean;
-  vType: 'top' | 'bottom' | 'inner' | 'outer' | 'tooltip';
-  vShowMessage: boolean;
-  vMessage: string;
-  vLocateMessage:
-    | 'top-left'
-    | 'top'
-    | 'top-right'
-    | 'center-left'
-    | 'center'
-    | 'center-right'
-    | 'bottom-left'
-    | 'bottom'
-    | 'bottom-right';
-  vIsAnimate: boolean;
-  vUseMaxLength: boolean;
-  vMaxLength: number;
-}
+import { settingsType } from './types';
 
 const App = () => {
   const headerArea = useRef<HTMLElement>(null);
@@ -40,7 +21,7 @@ const App = () => {
     'VRange',
     'VDate',
   ];
-  const [settings, setSettings] = useState<settings>({
+  const [settings, setSettings] = useState<settingsType>({
     vState: false,
     vType: 'top',
     vShowMessage: true,
