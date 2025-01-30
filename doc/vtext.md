@@ -1,8 +1,8 @@
 ### VText Component
 
-`VText` 컴포넌트는 기본적인 텍스트 입력 필드에 유효성 검사 문구를 출력해주는 기능을 제공합니다.
+`VText` 컴포넌트는 기본적인 텍스트 입력 필드에 유효성 검사 문구를 출력해주고 설정에 따라 최대 입력 가능값을 출력해주는 기능을 제공합니다.
 
-The `VText` component provides functionality to display validation messages for basic text input fields.
+The `VText` component provides the function of printing a validation text in a basic text input field and outputting the maximum input value depending on the settings.
 
 #### 사용 예제, Example
 

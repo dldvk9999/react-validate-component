@@ -1,8 +1,8 @@
 # react-validate-component
 
-`react-validate-component`는 리액트에서 입력 유효성 검사를 간편하게 처리할 수 있도록 도와주는 라이브러리입니다. 이 컴포넌트를 사용하여 간단하게 입력의 유효성을 검사할 수 있습니다.
+`react-validate-component`는 리액트에서 입력 유효성 검사 및 유효성 메시지 출력을 간편하게 처리할 수 있도록 도와주는 라이브러리입니다. 이 컴포넌트를 사용하여 간단하게 입력의 유효성 로직을 핸들링할 수 있습니다.
 
-`react-validate-component` is a library that helps simplify input validation in React. Which allows for easy validation of input.
+`react-validate-component` is a library that helps you easily handle input validation and validation message output in React. You can use this component to simply handle input validation logic.
 
 ## 설치, Install
 
@@ -24,9 +24,9 @@ yarn add react-validate-component
 
 ## 사용법, How to use
 
-현재 라이브러리에는 `vText`, `vCheckbox`, `vURL`, `vEmail`, `vRadio`, `vColor`, `vRange`, `vDate` 컴포넌트가 구현되어 있습니다. 이 컴포넌트를 사용하여 텍스트 입력 필드의 유효성 검사를 쉽게 구현할 수 있습니다.
+현재 라이브러리에는 `vText`, `vCheckbox`, `vURL`, `vEmail`, `vRadio`, `vColor`, `vRange`, `vDate` 컴포넌트가 구현되어 있습니다. 이 컴포넌트를 사용하여 여러 입력 필드의 유효성 검사를 쉽게 구현할 수 있습니다.
 
-The library currently includes the `vText`, `vCheckbox`, `vURL`, `vEmail`, `vRadio`, `vColor`, `vRange`, `vDate` component. You can use this component to easily implement validation for text input fields.
+Currently, the library implements the following components: `vText`, `vCheckbox`, `vURL`, `vEmail`, `vRadio`, `vColor`, `vRange`, and `vDate`. You can use this component to easily implement validation of multiple input fields.
 
 ## 컴포넌트, Components
 
@@ -50,8 +50,10 @@ The library currently includes the `vText`, `vCheckbox`, `vURL`, `vEmail`, `vRad
 ## 개발중인 기능, Features in Development
 
 - 추가적인 유효성 검사 규칙 및 에러 메시지 처리 기능이 계획되어 있습니다.
+- 데모 사이트의 추가 업데이트가 계획되어 있습니다.
 
 - Additional validation rules and error message handling features are also in the pipeline.
+- Additional updates to the demo site are planned.
 
 ## 기여, Contributions
 
