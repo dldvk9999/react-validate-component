@@ -1,4 +1,5 @@
-import * as VComponent from '../../../src';
+// import * as VComponent from '../../../src';
+import * as VComponent from 'react-validate-component';
 
 const VCheckbox = VComponent.VCheckbox;
 const VColor = VComponent.VColor;
