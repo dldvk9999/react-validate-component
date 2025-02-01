@@ -28,7 +28,6 @@ export const VURLComponent = ({ settings }: params) => {
   return (
     <div>
       <h2>VURL</h2>
-      <h3>INPUT URL.</h3>
       <VURL
         vState={settings.vState}
         vType={settings.vType}

@@ -20,7 +20,6 @@ export const VColorComponent = ({ settings }: params) => {
   return (
     <div>
       <h2>VColor</h2>
-      <h3>Choose Color.</h3>
       <VColor
         vState={settings.vState}
         vType={settings.vType}

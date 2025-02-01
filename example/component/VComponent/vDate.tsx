@@ -20,7 +20,6 @@ export const VDateComponent = ({ settings }: params) => {
   return (
     <div>
       <h2>VDate</h2>
-      <h3>Select Date.</h3>
       <VDate
         vState={settings.vState}
         vType={settings.vType}

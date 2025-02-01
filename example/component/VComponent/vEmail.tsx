@@ -28,7 +28,6 @@ export const VEmailComponent = ({ settings }: params) => {
   return (
     <div>
       <h2>VEmail</h2>
-      <h3>INPUT EMail.</h3>
       <VEmail
         vState={settings.vState}
         vType={settings.vType}

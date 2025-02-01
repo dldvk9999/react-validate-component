@@ -51,7 +51,6 @@ export const VRadioComponent = ({ settings }: params) => {
   return (
     <div>
       <h2>VRadio</h2>
-      <h3>Select Something.</h3>
       <VRadio
         vState={settings.vState}
         vName={'selectTest'}

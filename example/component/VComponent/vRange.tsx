@@ -20,7 +20,6 @@ export const VRangeComponent = ({ settings }: params) => {
   return (
     <div>
       <h2>VRange</h2>
-      <h3>Select Range.</h3>
       <VRange
         vState={settings.vState}
         vType={settings.vType}

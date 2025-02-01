@@ -23,7 +23,6 @@ export const VCheckboxComponent = ({ settings }: params) => {
   return (
     <div>
       <h2>VCheckbox</h2>
-      <h3>CHECK UP TO 3.</h3>
       <VCheckbox
         vState={settings.vState}
         vType={settings.vType}

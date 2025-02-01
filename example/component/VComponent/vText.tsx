@@ -27,7 +27,6 @@ export const VTextComponent = ({ settings }: params) => {
   return (
     <div>
       <h2>VText</h2>
-      <h3>DO NOT INPUT NUMBER.</h3>
       <VText
         vState={settings.vState}
         vType={settings.vType}
