@@ -39,6 +39,26 @@ label {
 span {
   vertical-align: middle;
 }
+thead {
+  background-color: white;
+  line-height: 2;
+}
+tr:hover {
+  background-color: #ececec;
+}
+td {
+  padding: 0.5rem 1rem;
+  word-break: keep-all;
+}
+code {
+  background-color: #e5e5e5;
+  padding: 0 0.5rem;
+  margin: 0.1rem 0;
+  display: inline-block;
+  white-space: nowrap;
+  border-radius: 7px;
+  line-height: 2;
+}
 
 [type='radio'] {
   appearance: none;
@@ -177,9 +197,12 @@ span {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 12rem;
+  padding: 0 7rem;
   gap: 3rem;
   min-width: 65%;
+}
+.components > div {
+  width: 100%;
 }
 .validation_message {
   color: red;
@@ -209,6 +232,13 @@ span {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.option_table {
+  border-radius: 10px;
+  border: 1px solid #888;
+  border-collapse: collapse;
+  margin: 2rem 0;
 }
 
 .footer {

@@ -1,6 +1,7 @@
-import styles from '../../index.module.css';
-import * as VComponent from '../../component/VComponent';
 import { useCallback } from 'react';
+import * as VComponent from '../../component/VComponent';
+import Table from '../Table/table';
+import styles from '../../index.module.css';
 
 type params = {
   components: string[];
@@ -16,6 +17,7 @@ export default function Body({ components = [], settings = {} }: params) {
       result.push(
         <div key={i} id={components[i]}>
           <VElement settings={settings} />
+          <Table component={components[i]} />
         </div>
       );
     }

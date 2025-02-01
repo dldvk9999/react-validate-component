@@ -1,0 +1,107 @@
+{
+  "common": {
+    "table": {
+      "option_name": "Name",
+      "type": "Type",
+      "desc": "Description",
+      "default": "Default"
+    }
+  },
+  "vComponent": {
+    "VCheckbox": {
+      "vState": "Validity status value",
+      "vType": "Type to output the validity message",
+      "vClassName": "Class name to apply validity",
+      "vLayoutClassName": "Checkbox layout class name",
+      "vLabelClassName": "Label class name",
+      "vCheckedClassName": "Class name when checked",
+      "vCheckList": "Checkbox list",
+      "vCheckedList": "List of currently checked items (it should be the same length as `vCheckList` and mapped to the same index)",
+      "vShowMessage": "Whether to display the validity message or not",
+      "vMessage": "Validity message",
+      "vMessageClass": "Class name to apply to the validity message",
+      "vIsAnimate": "Whether to apply animation when displaying the validity message",
+      "props": "Other options"
+    },
+    "VColor": {
+      "vState": "Validity status value",
+      "vType": "Type to output the validity message",
+      "vClassName": "Class name to apply validity",
+      "vShowMessage": "Whether to display the validity message or not",
+      "vMessage": "Validity message",
+      "vMessageClass": "Class name to apply to the validity message",
+      "vIsAnimate": "Whether to apply animation when displaying the validity message",
+      "props": "Other options"
+    },
+    "VDate": {
+      "vState": "Validity status value",
+      "vType": "Type to output the validity message",
+      "vClassName": "Class name to apply validity",
+      "vShowMessage": "Whether to display the validity message or not",
+      "vMessage": "Validity message",
+      "vMessageClass": "Class name to apply to the validity message",
+      "vIsAnimate": "Whether to apply animation when displaying the validity message",
+      "props": "Other options"
+    },
+    "VEmail": {
+      "vState": "Validity status value",
+      "vType": "Type to output the validity message",
+      "vClassName": "Class name to apply validity",
+      "vShowMessage": "Whether to display the validity message or not",
+      "vMessage": "Validity message",
+      "vLocateMessage": "Where to attach the validity message element",
+      "vMessageClass": "Class name to apply to the validity message",
+      "vIsAnimate": "Whether to apply animation when displaying the validity message",
+      "props": "Other options"
+    },
+    "VRadio": {
+      "vState": "Validity status value",
+      "vName": "Name for radio group",
+      "vSelectListName": "Names for radio list items",
+      "vSelectListValue": "Values for radio list items",
+      "vType": "Type to output the validity message",
+      "vClassName": "Class name to apply validity",
+      "vShowMessage": "Whether to display the validity message or not",
+      "vMessage": "Validity message",
+      "vLocateMessage": "Where to attach the validity message element",
+      "vMessageClass": "Class name to apply to the validity message",
+      "vIsAnimate": "Whether to apply animation when displaying the validity message",
+      "props": "Other options"
+    },
+    "VRange": {
+      "vState": "Validity status value",
+      "vType": "Type to output the validity message",
+      "vClassName": "Class name to apply validity",
+      "vShowMessage": "Whether to display the validity message or not",
+      "vMessage": "Validity message",
+      "vMessageClass": "Class name to apply to the validity message",
+      "vIsAnimate": "Whether to apply animation when displaying the validity message",
+      "props": "Other options"
+    },
+    "VText": {
+      "vState": "Validity status value",
+      "vType": "Type to output the validity message",
+      "vClassName": "Class name to apply validity",
+      "vShowMessage": "Whether to display the validity message or not",
+      "vMessage": "Validity message",
+      "vLocateMessage": "Where to attach the validity message element",
+      "vMessageClass": "Class name to apply to the validity message",
+      "vIsAnimate": "Whether to apply animation when displaying the validity message",
+      "vUseMaxLength": "Whether to use the display of the maximum input value",
+      "vMaxLength": "Maximum input value",
+      "vClassMaxLength": "Class name for the maximum input",
+      "props": "Other options"
+    },
+    "VURL": {
+      "vState": "Validity status value",
+      "vType": "Type to output the validity message",
+      "vClassName": "Class name to apply validity",
+      "vShowMessage": "Whether to display the validity message or not",
+      "vMessage": "Validity message",
+      "vLocateMessage": "Where to attach the validity message element",
+      "vMessageClass": "Class name to apply to the validity message",
+      "vIsAnimate": "Whether to apply animation when displaying the validity message",
+      "props": "Other options"
+    }
+  }
+}

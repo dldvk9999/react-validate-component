@@ -12,8 +12,9 @@
     "strictNullChecks": true,
     "preserveConstEnums": true,
     "sourceMap": true,
-    "lib": ["es2015", "es2016", "dom"],
+    "lib": ["es2015", "es2016", "dom", "ES5", "ES6"],
     "types": ["node"],
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "resolveJsonModule": true
   }
 }

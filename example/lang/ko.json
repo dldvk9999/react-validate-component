@@ -1,0 +1,107 @@
+{
+  "common": {
+    "table": {
+      "option_name": "옵션명",
+      "type": "타입",
+      "desc": "설명",
+      "default": "기본값"
+    }
+  },
+  "vComponent": {
+    "VCheckbox": {
+      "vState": "유효성 상태 값",
+      "vType": "유효성 메시지를 출력할 타입",
+      "vClassName": "유효성 입힐 class 명",
+      "vShowMessage": "유효성 메시지 출력할지",
+      "vLayoutClassName": "체크박스 레이아웃 class 명",
+      "vLabelClassName": "label class 명",
+      "vCheckedClassName": "checked 되었을 때 class 명",
+      "vCheckList": "checkbox 리스트",
+      "vCheckedList": "현재 체크되어있는 리스트 (vCheckList와 길이가 같아야하며 같은 인덱스마자 매핑)",
+      "vMessage": "유효성 메시지",
+      "vMessageClass": "유효성 메시지에 입힐 class 명",
+      "vIsAnimate": "유효성 메시지 출력 시 애니메이션 적용할지",
+      "props": "기타 옵션"
+    },
+    "VColor": {
+      "vState": "유효성 상태 값",
+      "vType": "유효성 메시지를 출력할 타입",
+      "vClassName": "유효성 입힐 class 명",
+      "vShowMessage": "유효성 메시지 출력할지",
+      "vMessage": "유효성 메시지",
+      "vMessageClass": "유효성 메시지에 입힐 class 명",
+      "vIsAnimate": "유효성 메시지 출력 시 애니메이션 적용할지",
+      "props": "기타 옵션"
+    },
+    "VDate": {
+      "vState": "유효성 상태 값",
+      "vType": "유효성 메시지를 출력할 타입",
+      "vClassName": "유효성 입힐 class 명",
+      "vShowMessage": "유효성 메시지 출력할지",
+      "vMessage": "유효성 메시지",
+      "vMessageClass": "유효성 메시지에 입힐 class 명",
+      "vIsAnimate": "유효성 메시지 출력 시 애니메이션 적용할지",
+      "props": "기타 옵션"
+    },
+    "VEmail": {
+      "vState": "유효성 상태 값",
+      "vType": "유효성 메시지를 출력할 타입",
+      "vClassName": "유효성 입힐 class 명",
+      "vShowMessage": "유효성 메시지 출력할지",
+      "vLocateMessage": "유효성 메시지를 element 어디에 붙일지",
+      "vMessage": "유효성 메시지",
+      "vMessageClass": "유효성 메시지에 입힐 class 명",
+      "vIsAnimate": "유효성 메시지 출력 시 애니메이션 적용할지",
+      "props": "기타 옵션"
+    },
+    "VRadio": {
+      "vState": "유효성 상태 값",
+      "vType": "유효성 메시지를 출력할 타입",
+      "vClassName": "유효성 입힐 class 명",
+      "vShowMessage": "유효성 메시지 출력할지",
+      "vName": "라디오 그룹핑할 이름",
+      "vSelectListName": "라디오 리스트 이름들",
+      "vSelectListValue": "라디오 리스트 값들",
+      "vLocateMessage": "유효성 메시지를 element 어디에 붙일지",
+      "vMessage": "유효성 메시지",
+      "vMessageClass": "유효성 메시지에 입힐 class 명",
+      "vIsAnimate": "유효성 메시지 출력 시 애니메이션 적용할지",
+      "props": "기타 옵션"
+    },
+    "VRange": {
+      "vState": "유효성 상태 값",
+      "vType": "유효성 메시지를 출력할 타입",
+      "vClassName": "유효성 입힐 class 명",
+      "vShowMessage": "유효성 메시지 출력할지",
+      "vMessage": "유효성 메시지",
+      "vMessageClass": "유효성 메시지에 입힐 class 명",
+      "vIsAnimate": "유효성 메시지 출력 시 애니메이션 적용할지",
+      "props": "기타 옵션"
+    },
+    "VText": {
+      "vState": "유효성 상태 값",
+      "vType": "유효성 메시지를 출력할 타입",
+      "vClassName": "유효성 입힐 class 명",
+      "vShowMessage": "유효성 메시지 출력할지",
+      "vLocateMessage": "유효성 메시지를 element 어디에 붙일지",
+      "vUseMaxLength": "입력 최댓값 표시 사용 여부",
+      "vMaxLength": "입력 최댓값",
+      "vClassMaxLength": "입력 최댓값 class 명",
+      "vMessage": "유효성 메시지",
+      "vMessageClass": "유효성 메시지에 입힐 class 명",
+      "vIsAnimate": "유효성 메시지 출력 시 애니메이션 적용할지",
+      "props": "기타 옵션"
+    },
+    "VURL": {
+      "vState": "유효성 상태 값",
+      "vType": "유효성 메시지를 출력할 타입",
+      "vClassName": "유효성 입힐 class 명",
+      "vShowMessage": "유효성 메시지 출력할지",
+      "vLocateMessage": "유효성 메시지를 element 어디에 붙일지",
+      "vMessage": "유효성 메시지",
+      "vMessageClass": "유효성 메시지에 입힐 class 명",
+      "vIsAnimate": "유효성 메시지 출력 시 애니메이션 적용할지",
+      "props": "기타 옵션"
+    }
+  }
+}

@@ -4,9 +4,17 @@ import styles from '../../index.module.css';
 type params = {
   settings: settingsType;
   setSettings: Function;
+  locale: string;
+  setLocale: Function;
 };
 
-export default function Common({ settings, setSettings }: params) {
+export default function Common({
+  settings,
+  setSettings,
+  locale,
+  setLocale,
+}: params) {
+  const languageList = ['en', 'ko'];
   const VBooleanValues = [true, false];
   const VTypeValues = ['top', 'bottom', 'inner', 'outer', 'tooltip'];
   const VLocateMessageValues = [
@@ -43,6 +51,27 @@ export default function Common({ settings, setSettings }: params) {
   return (
     <aside className={`${styles.aside} ${styles.right}`}>
       <ul>
+        <li>
+          <details>
+            <summary>Language</summary>
+            {languageList.map((item, index) => {
+              return (
+                <label htmlFor="language" key={index}>
+                  <input
+                    type="radio"
+                    name="language"
+                    value={item}
+                    checked={locale === item}
+                    onChange={() => {
+                      setLocale(item);
+                    }}
+                  />
+                  <span>{item}</span>
+                </label>
+              );
+            })}
+          </details>
+        </li>
         <li>
           <details>
             <summary>vState</summary>
