@@ -170,6 +170,8 @@ span {
 }
 .aside details > summary {
   cursor: pointer;
+  font-size: 1.3rem;
+  margin: 0.4rem 0;
 }
 .components {
   display: flex;
