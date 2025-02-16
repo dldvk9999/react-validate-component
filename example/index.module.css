@@ -55,9 +55,11 @@ code {
   padding: 0 0.5rem;
   margin: 0.1rem 0;
   display: inline-block;
-  white-space: nowrap;
   border-radius: 7px;
   line-height: 2;
+}
+td > code {
+  white-space: nowrap;
 }
 
 [type='radio'] {
