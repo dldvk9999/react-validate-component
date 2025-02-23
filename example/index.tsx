@@ -1,6 +1,6 @@
 // React
 import 'react-app-polyfill/ie11';
-import { useEffect, useCallback, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { IntlProvider } from 'react-intl';
 // Style
@@ -10,6 +10,7 @@ import Nav from './component/Nav/nav';
 import Footer from './component/Footer/footer';
 import Body from './component/Body/body';
 import Common from './component/Nav/common';
+import Aurora from './component/Aurora/Aurora';
 // Types
 import { settingsType } from './types';
 // Languages
@@ -63,27 +64,6 @@ const App = () => {
 
   let flattedMessages = flattenMessages(messages);
 
-  // 스크롤을 감지해서 타이틀의 fontSize와 opacity를 조절
-  const handleScroll = useCallback(() => {
-    title.current!.style.fontSize = `${Math.min(
-      Math.max((1000 - window.scrollY) / 5, 45),
-      100
-    )}px`;
-    title.current!.style.opacity = `${Math.min(
-      Math.max(((1000 - window.scrollY) / 1000) * 1.5, 0),
-      1
-    )}`;
-  }, []);
-
-  // intersectionObserver가 headerArea의 50% 영역에 닿았을 때 실행
-  const callback = useCallback(([entry]) => {
-    // 50% 이하면 handleScroll 리스너 실행, 아니면 제거
-    if (entry.intersectionRatio <= 0.5) {
-      window.addEventListener('scroll', handleScroll);
-    } else {
-      window.removeEventListener('scroll', handleScroll);
-    }
-  }, []);
   // 언어셋 설정
   useEffect(() => {
     setMessages(LANGUAGE_MESSAGES[locale]);
@@ -91,19 +71,13 @@ const App = () => {
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
-
-    const observer = new IntersectionObserver(callback, { threshold: 0.5 });
-    observer.observe(headerArea.current!);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
   }, []);
 
   return (
     <IntlProvider locale={locale} messages={flattedMessages}>
       <main>
         <header ref={headerArea} className={styles.header}>
+          <Aurora colorStops={['#3A29FF', '#FF94B4', '#FF3232']} speed={0.5} />
           <h1 ref={title}>React-Validate-Component</h1>
         </header>
         <div className={styles.layout}>
