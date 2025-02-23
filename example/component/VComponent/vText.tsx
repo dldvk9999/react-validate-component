@@ -1,5 +1,6 @@
 import styles from '../../index.module.css';
 import { VText } from './moduleImport';
+import ScrollFloat from '../ScrollFloat/ScrollFloat';
 
 type params = {
   settings: {
@@ -26,7 +27,17 @@ type params = {
 export const VTextComponent = ({ settings }: params) => {
   return (
     <div>
-      <h2>VText</h2>
+      <ScrollFloat
+        animationDuration={1}
+        ease="back.inOut(2)"
+        scrollStart="center bottom+=50%"
+        scrollEnd="bottom bottom-=40%"
+        stagger={0.1}
+        containerClassName={styles.component_container}
+        textClassName={styles.component_title}
+      >
+        VText
+      </ScrollFloat>
       <VText
         vState={settings.vState}
         vType={settings.vType}

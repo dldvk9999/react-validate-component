@@ -245,3 +245,12 @@ td > code {
   text-decoration: none;
   color: var(--footer-color);
 }
+
+/* components */
+.component_container {
+  margin: 0 0 2rem;
+}
+.component_title {
+  line-height: 1 !important;
+  font-size: 6rem !important;
+}
