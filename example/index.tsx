@@ -11,6 +11,7 @@ import Footer from './component/Footer/footer';
 import Body from './component/Body/body';
 import Common from './component/Nav/common';
 import Aurora from './component/Aurora/Aurora';
+import SplashCursor from './component/SplashCursor/SplashCursor';
 // Types
 import { settingsType } from './types';
 // Languages
@@ -75,6 +76,7 @@ const App = () => {
 
   return (
     <IntlProvider locale={locale} messages={flattedMessages}>
+      <SplashCursor DYE_RESOLUTION={800} />
       <main>
         <header ref={headerArea} className={styles.header}>
           <Aurora colorStops={['#3A29FF', '#FF94B4', '#FF3232']} speed={0.5} />
