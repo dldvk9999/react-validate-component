@@ -3,6 +3,7 @@
   scroll-behavior: smooth;
   --white: white;
   --black: black;
+  --softBlack: #111;
   --background-color: #f0fafa;
   --title-color: #ffdae2;
   --title-shadow-color: #dfbfc4;
@@ -124,9 +125,10 @@ td > code {
   font-size: 100px;
 }
 .layout {
-  background-color: var(--black, black);
+  background: linear-gradient(180deg, black 1%, #111 99%);
   color: var(--white, white);
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: flex-start;
   justify-content: center;
   width: 100%;
@@ -168,7 +170,7 @@ td > code {
 }
 .aside.right {
   border-left: 2px solid var(--aside-color);
-  width: 23rem;
+  width: 16rem;
   padding-right: 2rem;
 }
 .aside details {
@@ -190,7 +192,6 @@ td > code {
   align-items: flex-start;
   padding: 0 7rem;
   gap: 3rem;
-  min-width: 65%;
 }
 .components > div {
   width: 100%;
@@ -230,6 +231,7 @@ td > code {
   border: 1px solid #888;
   border-collapse: collapse;
   margin: 2rem 0;
+  width: 100%;
 }
 
 .footer {
