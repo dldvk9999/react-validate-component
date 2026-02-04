@@ -17,7 +17,7 @@ import { settingsType } from './types';
 import * as ko from './lang/ko.json';
 import * as en from './lang/en.json';
 
-const DEFAULT_LANGUAGE = 'en';
+const DEFAULT_LANGUAGE = 'ko';
 const LANGUAGE_MESSAGES = { en, ko };
 
 const App = () => {
@@ -36,7 +36,7 @@ const App = () => {
     'VDate',
   ];
   const [settings, setSettings] = useState<settingsType>({
-    vState: false,
+    vState: true,
     vType: 'top',
     vShowMessage: true,
     vMessage: 'Its wrong !!!',
