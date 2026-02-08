@@ -18,7 +18,9 @@
   },
   "alias": {
     "scheduler/tracing": "../node_modules/scheduler/tracing-profiling",
-    "react/jsx-runtime": "react/jsx-runtime.js"
+    "react/jsx-runtime": "react/jsx-runtime.js",
+    "react": "./node_modules/react",
+    "react-dom": "./node_modules/react-dom"
   },
   "devDependencies": {
     "@babel/core": "^7.26.7",
