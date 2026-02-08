@@ -1,5 +1,5 @@
 .invalid {
-  border: 2px solid red;
+  border: 1px solid red;
   outline: none;
 }
 .invalid:focus,

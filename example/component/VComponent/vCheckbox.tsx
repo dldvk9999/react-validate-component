@@ -48,7 +48,12 @@ export const VCheckboxComponent = ({ settings }: params) => {
         vMessageClass={styles.validation_message}
         vIsAnimate={settings.vIsAnimate}
         props={{
-          onChange: () => {},
+          onChange: (e: any) => {
+            const index = list.indexOf(e.target.value);
+            const newChecked = [...checked];
+            newChecked[index] = e.target.checked;
+            setChecked(newChecked);
+          },
         }}
       />
     </div>
