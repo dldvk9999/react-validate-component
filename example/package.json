@@ -7,7 +7,7 @@
     "build": "parcel build index.html"
   },
   "engines": {
-    "node": "18.x"
+    "node": ">=16"
   },
   "dependencies": {
     "gsap": "^3.12.7",
