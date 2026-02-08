@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
-import { VEmail } from '../.';
+import { VEmail } from '../dist';
 
 describe('VEmail', () => {
   it('renders without crashing', () => {

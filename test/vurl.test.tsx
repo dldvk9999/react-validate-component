@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
-import { VURL } from '../.';
+import { VURL } from '../dist';
 
 describe('VURL', () => {
   it('renders without crashing', () => {
