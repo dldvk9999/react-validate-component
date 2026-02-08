@@ -17,7 +17,6 @@ export function VText({
   vClassMaxLength = '',
   props = {},
 }: VTEXT_PARAMS) {
-  const inputRef = React.useRef<HTMLInputElement>(null);
   const [inputLength, setInputLength] = React.useState<number>(
     (props?.defaultValue || props?.value)?.length ?? 0
   );
@@ -27,7 +26,6 @@ export function VText({
     return (
       <input
         type="text"
-        ref={inputRef}
         {...props}
         onChange={e => {
           if (vUseMaxLength && e.target.value.length > vMaxLength) {
@@ -35,6 +33,9 @@ export function VText({
             e.target.value = e.target.value.slice(0, vMaxLength);
           } else {
             props?.onChange(e);
+            if (vUseMaxLength) {
+              setInputLength(e.target.value.length);
+            }
           }
         }}
         defaultValue={props?.defaultValue ?? ''}
@@ -49,13 +50,6 @@ export function VText({
   if (vUseMaxLength) {
     props = { ...props, maxLength: vMaxLength };
   }
-
-  React.useEffect(() => {
-    // 입력 최댓값을 사용할 경우 useEffect Hook 설정
-    if (vUseMaxLength) {
-      setInputLength((inputRef.current?.value ?? '').length);
-    }
-  }, [inputRef.current?.value]);
 
   switch (vType) {
     default:

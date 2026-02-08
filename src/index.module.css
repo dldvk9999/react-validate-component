@@ -26,6 +26,7 @@
 /* vType === 'outer' */
 .vinput {
   display: flex;
+  width: fit-content;
 }
 .vinput-top-left {
   flex-direction: column-reverse;
@@ -113,13 +114,16 @@
 }
 
 /* vType === 'tooltip' */
+* {
+  --tooltip-default-color: #333;
+}
 .tooltipMessage {
   position: absolute;
   margin: 0;
   padding: 10px 20px;
   border: 1px solid transparent;
   border-radius: 10px;
-  background-color: black;
+  background-color: var(--tooltip-default-color);
 }
 p[class*='tooltipMessage-top'] {
   transform: translateY(calc(-100% - 10px));
@@ -129,15 +133,15 @@ p[class*='tooltipMessage-top']::after {
   position: absolute;
   bottom: 0;
   border: 10px solid transparent;
-  border-top-color: black;
+  border-top-color: var(--tooltip-default-color);
   border-bottom: 0;
-  margin-bottom: -11px;
+  margin-bottom: -10px;
 }
 .vinput.tooltipMessage-top-left {
   justify-content: flex-start;
 }
 p.tooltipMessage-top-left::after {
-  left: 3%;
+  left: 10%;
 }
 .vinput.tooltipMessage-top {
   justify-content: center;
@@ -149,7 +153,7 @@ p.tooltipMessage-top::after {
   justify-content: flex-end;
 }
 p.tooltipMessage-top-right::after {
-  left: 87%;
+  left: 80%;
 }
 p[class*='tooltipMessage-center'] {
   /* transform: translateY(calc(-100% - 10px)); */
@@ -166,8 +170,8 @@ p.tooltipMessage-center-right {
   transform: translateX(calc(100% + 10px));
 }
 p.tooltipMessage-center-right::after {
-  border-right-color: black;
-  left: -10%;
+  border-right-color: var(--tooltip-default-color);
+  left: -15%;
 }
 .vinput.tooltipMessage-center-left {
   justify-content: flex-start;
@@ -176,7 +180,7 @@ p.tooltipMessage-center-left {
   transform: translateX(calc(-100% - 10px));
 }
 p.tooltipMessage-center-left::after {
-  border-left-color: black;
+  border-left-color: var(--tooltip-default-color);
   left: 100%;
 }
 
@@ -188,7 +192,7 @@ p[class*='tooltipMessage-bottom']::after {
   position: absolute;
   top: 0;
   border: 10px solid transparent;
-  border-bottom-color: black;
+  border-bottom-color: var(--tooltip-default-color);
   border-top: 0;
   margin-top: -11px;
 }
@@ -196,7 +200,7 @@ p[class*='tooltipMessage-bottom']::after {
   justify-content: flex-start;
 }
 p.tooltipMessage-bottom-left::after {
-  left: 3%;
+  left: 10%;
 }
 .vinput.tooltipMessage-bottom {
   justify-content: center;
@@ -208,7 +212,7 @@ p.tooltipMessage-bottom::after {
   justify-content: flex-end;
 }
 p.tooltipMessage-bottom-right::after {
-  left: 87%;
+  left: 80%;
 }
 
 .animateMessage {
