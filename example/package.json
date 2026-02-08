@@ -6,6 +6,9 @@
     "start": "parcel index.html",
     "build": "parcel build index.html"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "gsap": "^3.12.7",
     "ogl": "^1.0.11",
