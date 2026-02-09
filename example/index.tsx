@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { IntlProvider } from 'react-intl';
 // Style
-import styles from './index.module.css';
+import * as styles from './index.module.css';
 // Component
 import Nav from './component/Nav/nav';
 import Footer from './component/Footer/footer';
