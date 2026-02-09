@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '../../index.module.css';
+import * as styles from '../../index.module.css';
 import { VRange } from './moduleImport';
 import ScrollFloat from '../ScrollFloat/ScrollFloat';
 

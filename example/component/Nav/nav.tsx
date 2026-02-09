@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import styles from '../../index.module.css';
+import * as styles from '../../index.module.css';
 
 type params = {
   components: string[];

@@ -1,5 +1,5 @@
 import { settingsType } from '../../types';
-import styles from '../../index.module.css';
+import * as styles from '../../index.module.css';
 
 type params = {
   settings: settingsType;

@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { FormattedMessage } from 'react-intl';
-import styles from '../../index.module.css';
+import * as styles from '../../index.module.css';
 
 type params = {
   component: string;

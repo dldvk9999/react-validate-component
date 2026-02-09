@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import * as VComponent from '../../component/VComponent';
 import Table from '../Table/table';
-import styles from '../../index.module.css';
+import * as styles from '../../index.module.css';
 import Sample from '../Sample/sample';
 
 type params = {

@@ -1,4 +1,4 @@
-import styles from '../../index.module.css';
+import * as styles from '../../index.module.css';
 import { VText } from './moduleImport';
 import ScrollFloat from '../ScrollFloat/ScrollFloat';
 

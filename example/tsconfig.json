@@ -16,5 +16,6 @@
     "types": ["node"],
     "esModuleInterop": true,
     "resolveJsonModule": true
-  }
+  },
+  "include": ["."]
 }
