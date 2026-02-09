@@ -7,7 +7,7 @@
     "build": "parcel build index.html"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "dependencies": {
     "gsap": "^3.12.7",
@@ -31,6 +31,6 @@
     "@types/react-dom": "^18.3.0",
     "@types/react-highlight": "^0.12.8",
     "parcel": "^2.12.0",
-    "typescript": "^3.4.5"
+    "typescript": "^5.0.0"
   }
 }
